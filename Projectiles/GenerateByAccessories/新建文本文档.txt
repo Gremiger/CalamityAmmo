@@ -1,0 +1,50 @@
+DeathMarkMagnum: {
+				DisplayName: 死亡标记马格南
+				 Tooltip:
+					'''
+					射击减少敌人的伤害减免
+					“和死亡跳支舞吧！”
+					''' 
+			}
+
+			FrigidCoil: {
+				DisplayName: 极寒线圈
+				Tooltip: 
+				'''
+				远程速度减少10%，造成冷系伤害的远程弹幕伤害提高10%
+				中幅提升远程弹幕的飞行速度
+				远程弹幕会造成霜火debuff
+				击中敌人时在敌人四周召唤寒冰炸弹
+				这个效果有5秒冷却
+			}
+
+			ScorchingCoil: {
+				 DisplayName: 酷热线圈
+				 Tooltip: 
+				 '''
+				 远程暴击率提高7%
+				 中等幅度提升远程弹幕的飞行速度
+				 远程弹幕会造成硫磺火debuff
+				 每击中敌人6次发射一组深渊亡魂
+				 每个弹幕只会计算一次
+				 '''
+			}
+
+			AutoCalculationCoil: {
+				 DisplayName: 老登的自动演算线圈
+				 Tooltip: 
+				 '''
+				 中等幅度提升远程弹幕的飞行速度
+				 远程弹幕会自动寻的
+				 按[KEY]在不同的搜索算法中切换
+				 '''
+			}
+
+			TransformerCoil: {
+				 DisplayName: 变压线圈
+				 Tooltip: 
+				 '''
+				 较高幅度提升远程弹幕的飞行速度
+				 远程弹幕会造成带电debuff，你免疫带电
+				 电流会在你击中的最后2个敌人身上跳跃
+				 '''

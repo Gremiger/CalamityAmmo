@@ -1,0 +1,903 @@
+
+Mods: {
+	CalamityAmmo: {
+		Bestiary.QianXing: 一只为你提供弹药的猫娘，外表可爱，价格实惠，如果你有足够的钱甚至可以尝试把她买下来（前提是没被拿大斧子砍死）。
+
+		TownNPCMood: {
+			QianXing: {
+				Content: 和你相处很不错哦。
+				NoHome: 6。
+				LoveSpace: 和平与宁静意味着我可以尽情享受！
+				FarFromHome: 额，能把你的魔镜借我一下嘛？
+				DislikeCrowded: 聚众开趴可不是什么好活动。
+				HateCrowded: 这也太挤了......涨价吧。
+				LikeBiome: 我喜欢这个充满了危险和宝藏的地方，你准备好被秒杀了吗？
+				LoveBiome: 别想啦，就是为了方便你买东西才选的森林群落
+				DislikeBiome: 这里的沙尘暴把我身上都弄脏了，能换个地方住吗？
+				HateBiome: 没有一只脑子正常的猫会自己跳进海里抓鱼吃。
+				LikeNPC: "{NPCName}基本不卖什么废品，他还挺不错的。"
+				LikeNPC_Princess: 公主公主公主公主公主公主公主公主公主公主公主公主公主
+				LoveNPC: "{NPCName}和我很聊得来，是因为都长着兽耳嘛？"
+				DislikeNPC: 我受不了像{NPCName}又和我抢生意又天天盯着我看，真让人不舒服啊
+				HateNPC: "{NPCName}这个天生邪恶的小鬼不配住在我旁边！"
+			}
+		}
+
+		QX: 千星
+		Glove: 类似效果也作用于射手
+
+		Projectiles: {
+			ArcaneArrow_Proj: {
+				/* DisplayName: Arcane Arrow */
+			}
+
+			Crabulon_Spore: {
+				DisplayName: 菌生蟹的孢子
+			}
+
+			HealOrb: {
+				DisplayName: 治疗菇
+			}
+
+			RadioAura: {
+				/* DisplayName: Red Lightning Aura */
+			}
+
+			Shroomere: {
+				/* DisplayName: Shroomere */
+			}
+
+			Spore1: {
+				DisplayName: 孢子云
+			}
+
+			Spore2: {
+				DisplayName: 孢子云
+			}
+
+			Spore3: {
+				DisplayName: 孢子云
+			}
+
+			HydrothermicArrow_Proj: {
+				/* DisplayName: Hydrothermic Arrow */
+			}
+
+			HydrothermicExplosion: {
+				DisplayName: 渊泉爆炸
+			}
+
+			HydrothermicBullet_Proj: {
+				/* DisplayName: Hydrothermic Bullet */
+			}
+
+			HydrothermicVolcano: {
+				/* DisplayName: "Hydrothermic Volcano " */
+			}
+
+			VolcanicFireballRanged: {
+				/* DisplayName: Volcanic Fireball */
+			}
+
+			MirageArrow_Proj: {
+				/* DisplayName: Mirage Arrow */
+			}
+
+			MirageArrow_Proj2: {
+				/* DisplayName: Mirage Arrow */
+			}
+
+			SoulBullet_Proj: {
+				/* DisplayName: Phantom Spirit */
+			}
+
+			Chengying_Fumo_Proj: {
+				/* DisplayName: Chengying's Fumo */
+			}
+
+			_BloodBullet: {
+				DisplayName: 血弹
+			}
+
+			_DesertFeatherArrow: {
+				DisplayName: 荒漠羽箭
+			}
+
+			_PearlArrow: {
+				DisplayName: 珍珠箭
+			}
+
+			_PearlBullet: {
+				DisplayName: 珍珠子弹
+			}
+
+			_PrismBullet: {
+				DisplayName: 棱晶子弹
+			}
+
+			_RottenBullet: {
+				DisplayName: 腐烂物
+			}
+
+			_RottenBullet2: {
+				DisplayName: 腐烂物
+			}
+
+			_SeaBubble: {
+				DisplayName: 水流
+			}
+
+			_VictideArrow: {
+				DisplayName: 胜潮箭
+			}
+
+			_VictideBullet: {
+				DisplayName: 胜潮弹
+			}
+
+			_WulfArrow: {
+				DisplayName: 钨钢箭
+			}
+
+			_AstralArrow: {
+				/* DisplayName: Astral Arrow */
+			}
+
+			_AstralBullet: {
+				/* DisplayName: Astral Bullet */
+			}
+
+			_AstralMine: {
+				/* DisplayName: Astral Mine */
+			}
+
+			_AstralShot: {
+				/* DisplayName: Astral Laser */
+			}
+
+			_AstralStar: {
+				/* DisplayName: Astral Star */
+			}
+
+			_AstralStar2: {
+				/* DisplayName: Astral Star */
+			}
+
+			_DazzlingAstralArrow: {
+				/* DisplayName: Dazzling Astral Arrow */
+			}
+
+			_DazzlingAstralBullet: {
+				/* DisplayName: Astral Bullet */
+			}
+
+			_Flower: {
+				/* DisplayName: Perennial Flower */
+			}
+
+			_FossilArrow: {
+				/* DisplayName: Fossil Arrow */
+			}
+
+			_FossilBullet: {
+				/* DisplayName: Fossil Bullet */
+			}
+
+			_FossilShard: {
+				/* DisplayName: 化石碎片 */
+			}
+
+			_FossilShard2: {
+				/* DisplayName: 化石碎片 */
+			}
+
+			_NapalmBullet: {
+				/* DisplayName: Napalm Bullet */
+			}
+
+			_Seed: {
+				DisplayName: 永恒种子
+			}
+
+			_WeakAstralArrow: {
+				/* DisplayName: Astral Bullet */
+			}
+
+			_WeakAstralBullet: {
+				/* DisplayName: Weak Astral Bullet */
+			}
+
+			FakeSeaStar1: {
+				/* DisplayName: Aquatic Star */
+			}
+
+			FakeSeaStar2: {
+				/* DisplayName: Brittle Star */
+			}
+
+			_ElementalArrow: {
+				DisplayName: 元素之箭
+			}
+
+			_ElementalBullet: {
+				DisplayName: 天体萝卜丝
+			}
+
+			_GoldenFeatherArrow: {
+				DisplayName: 金羽箭
+			}
+
+			_RedLightning: {
+				DisplayName: 孙红雷
+			}
+
+			HealingRain: {
+				DisplayName: 治疗之雨
+			}
+
+			HealingStarcloud: {
+				DisplayName: 治疗星云
+			}
+
+			LightningVortex: {
+				DisplayName: 星旋闪电
+			}
+
+			MetorSolar: {
+				DisplayName: 日耀火球
+			}
+
+			WulfrumBoltRanged: {
+				DisplayName: 钨钢光束
+			}
+
+			AeroGrenade: {
+				DisplayName: 天蓝火箭
+			}
+
+			AeroMine: {
+				DisplayName: 天蓝火箭
+			}
+
+			AeroRocket: {
+				DisplayName: 天蓝火箭
+			}
+
+			AeroSnowman: {
+				DisplayName: 天蓝火箭
+			}
+
+			Mushroom_ClusterRocketI: {
+				DisplayName: 蘑菇
+			}
+
+			Mushroom_ClusterRocketII: {
+				DisplayName: 蘑菇
+			}
+
+			Mushroom_DryRocket: {
+				DisplayName: 蘑菇
+			}
+
+			Mushroom_HoneyRocket: {
+				DisplayName: 蘑菇
+			}
+
+			Mushroom_LavaRocket: {
+				DisplayName: 蘑菇
+			}
+
+			Mushroom_MiniNukeRocketI: {
+				DisplayName: 蘑菇
+			}
+
+			Mushroom_MiniNukeRocketII: {
+				DisplayName: 蘑菇
+			}
+
+			Mushroom_RocketI: {
+				DisplayName: 蘑菇
+			}
+
+			Mushroom_RocketII: {
+				DisplayName: 蘑菇
+			}
+
+			Mushroom_RocketIII: {
+				DisplayName: 蘑菇
+			}
+
+			Mushroom_RocketIV: {
+				DisplayName: 蘑菇
+			}
+
+			Mushroom_WetRocket: {
+				DisplayName: 蘑菇
+			}
+
+			Sand_Rocket: {
+				DisplayName: 钻地导弹
+			}
+
+			SandGrenade: {
+				DisplayName: 钻地导弹
+			}
+
+			SandMine: {
+				DisplayName: 钻地导弹
+			}
+
+			SandSnowman: {
+				DisplayName: 钻地导弹
+			}
+
+			Spike: {
+				DisplayName: 斯派克
+			}
+
+			SpikyBall: {
+				DisplayName: 沙刺球
+			}
+
+			ThePack_ClusterRocketI: {
+				/* DisplayName: PR */
+			}
+
+			ThePack_ClusterRocketII: {
+				/* DisplayName: PR */
+			}
+
+			ThePack_DryRocket: {
+				/* DisplayName: PR */
+			}
+
+			ThePack_HoneyRocket: {
+				/* DisplayName: PR */
+			}
+
+			ThePack_LavaRocket: {
+				/* DisplayName: PR */
+			}
+
+			ThePack_MiniNukeRocketI: {
+				/* DisplayName: PR */
+			}
+
+			ThePack_MiniNukeRocketII: {
+				/* DisplayName: PR */
+			}
+
+			ThePack_RocketI: {
+				/* DisplayName: PR */
+			}
+
+			ThePack_RocketII: {
+				/* DisplayName: PR */
+			}
+
+			ThePack_RocketIII: {
+				/* DisplayName: PR */
+			}
+
+			ThePack_RocketIV: {
+				/* DisplayName: PR */
+			}
+
+			ThePack_SandRocket: {
+				/* DisplayName: PR */
+			}
+
+			ThePack_WetRocket: {
+				/* DisplayName: PR */
+			}
+
+			ThePackLittle_ClusterRocketI: {
+				/* DisplayName: PR */
+			}
+
+			ThePackLittle_ClusterRocketII: {
+				/* DisplayName: PR */
+			}
+
+			ThePackLittle_DryRocket: {
+				/* DisplayName: PR */
+			}
+
+			ThePackLittle_HoneyRocket: {
+				/* DisplayName: PR */
+			}
+
+			ThePackLittle_LavaRocket: {
+				/* DisplayName: PR */
+			}
+
+			ThePackLittle_MiniNukeRocketI: {
+				/* DisplayName: PR */
+			}
+
+			ThePackLittle_MiniNukeRocketII: {
+				/* DisplayName: PR */
+			}
+
+			ThePackLittle_RocketI: {
+				/* DisplayName: PR */
+			}
+
+			ThePackLittle_RocketII: {
+				/* DisplayName: PR */
+			}
+
+			ThePackLittle_RocketIII: {
+				/* DisplayName: PR */
+			}
+
+			ThePackLittle_RocketIV: {
+				/* DisplayName: PR */
+			}
+
+			ThePackLittle_WetRocket: {
+				/* DisplayName: PR */
+			}
+
+			_AstralFlame: {
+				/* DisplayName: Astral Crystal */
+			}
+		}
+
+		Items: {
+			ArcaneQuiver: {
+				DisplayName: 奥术箭袋
+				Tooltip:
+					'''
+					使用弓弩时可消耗魔力为箭矢附魔，提升伤害
+					魔力消耗与伤害增幅取决于武器的攻速
+					打开饰品可见性将把任何种类的箭矢替换为追踪的奥术箭
+					法力充盈时，奥术箭的伤害更高
+					箭的速度大大提高
+					20%的几率不消耗箭
+					魔力病也会影响远程伤害
+					魔法，能量。我的人民陷入其中不能自拔!
+					'''
+			}
+
+			EvilMushroom: {
+				DisplayName: 恶毒的蘑菇
+				Tooltip: 你和被命中的敌人均获得死亡标记
+			}
+
+			FastHolster: {
+				DisplayName: 快拔枪套
+				Tooltip:
+					'''
+					枪械的使用时间减少10%
+					远程暴击率减少4%
+					不要在乎打得准不准，只要打得多，就是打得准！
+					'''
+			}
+
+			GrapeLauncher: {
+				DisplayName: 霰弹下挂
+				Tooltip: 连续命中敌人8次后发射一连串子弹
+			}
+
+			InfectedCrabGill: {
+				DisplayName: 感染蟹腮
+				Tooltip:
+					'''
+					随着时间推移召唤可以伤害敌人的孢子
+					发射远程弹幕时有概率额外射出命中后分裂的真菌弹
+					减少1点生命再生
+					'''
+			}
+
+			LifeMushroom: {
+				DisplayName: 一般路过的蘑菇
+				Tooltip: 在玩家附近生成一个治愈蘑菇，拾取后恢复15点生命值
+			}
+
+			MarvelousMycelium: {
+				DisplayName: 神奇菌丝
+				Tooltip:
+					'''
+					未受伤时减少5点防御与1点生命再生，提升6%远程伤害与9%远程暴击率
+					受伤后给予5秒与菇共生buff，期间减少6%远程伤害与9%远程暴击，不再减少生存属性
+					死亡延续生命，生命成就死亡
+					'''
+			}
+
+			ModifiedCoil: {
+				DisplayName: 魔改线圈
+				Tooltip:
+					'''
+					远程伤害+7%
+					小幅提升远程弹幕的飞行速度
+					可能会漏电
+					'''
+			}
+
+			MushroomUnitedNations: {
+				DisplayName: 蘑拟黏合国
+				Tooltip:
+					'''
+					生成一个治愈蘑菇，拾取后恢复15点生命值
+					你和被命中的敌人均获得死亡标记
+					受到伤害时释放一大片蘑菇孢子
+					未受伤时减少5点防御与2点生命再生，提升15%远程伤害与5%远程暴击率
+					受伤后不再减少生存属性并给予与菇共生增益
+					随着时间推移召唤可以伤害敌人的孢子
+					发射远程弹幕时有概率额外射出命中后分裂的真菌弹
+					隐藏饰品可见性时给予幻菇中毒buff
+					一杆蘑菇狙击枪悬浮在你的头顶，狙杀进入射程的敌人
+					敌人将不那么容易瞄准你
+					'''
+			}
+
+			OdddMushroom: {
+				DisplayName: 致幻蘑菇（可装备）
+				Tooltip:
+					'''
+					隐藏饰品可见性时给予幻菇中毒buff
+					“眼睛所见的，未必真实”
+					'''
+			}
+
+			SuperCoil: {
+				DisplayName: 精金线圈
+				Tooltip:
+					'''
+					提高远程暴击率
+					远程武器的攻速越快，越容易暴击
+					中幅提升远程弹幕的飞行速度
+					'''
+			}
+
+			TitaniumCoil: {
+				DisplayName: 钛金线圈
+				Tooltip:
+					'''
+					提高远程伤害
+					远程武器的攻速越慢，伤害越高
+					中幅提升远程弹幕的飞行速度
+					'''
+			}
+
+			WulfrumCoil: {
+				DisplayName: 钨钢线圈
+				Tooltip:
+					'''
+					远程伤害+7%
+					略微提升远程弹幕的飞行速度
+					'''
+			}
+
+			AstralArrow: {
+				DisplayName: 幻星箭
+				/* Tooltip: 击败诞生于星辰之间的恐惧以完成进化 */
+			}
+
+			AstralBullet: {
+				DisplayName: 幻星子弹
+				/* Tooltip: 击败诞生于星辰之间的恐惧以完成进化 */
+			}
+
+			DazzlingAstralArrow: {
+				DisplayName: 炫星箭
+				/* Tooltip:
+					'''
+					星星，排列好了！
+					你确定？
+					''' */
+			}
+
+			DazzlingAstralBullet: {
+				DisplayName: 炫星子弹
+				/* Tooltip: 行星，恒星，力量就在其中！ */
+			}
+
+			FossilArrow: {
+				DisplayName: 化石箭
+				/* Tooltip:
+					'''
+					坚固的化石击碎敌人的防御
+					酸腐的化石释放积年的余毒
+					''' */
+			}
+
+			FossilBullet: {
+				DisplayName: 化石子弹
+				/* Tooltip:
+					'''
+					坚固的化石击碎敌人的防御
+					酸腐的化石释放积年的余毒
+					''' */
+			}
+
+			HydrothermicArrow: {
+				DisplayName: 渊泉箭
+				Tooltip: 以子之矛攻子之盾，就会产生大爆炸！
+			}
+
+			HydrothermicBullet: {
+				DisplayName: 渊泉子弹
+				Tooltip: 我的身体内部，可是一千四百度喔。
+			}
+
+			NapalmBullet: {
+				DisplayName: 汽油弹
+				/* Tooltip: 一点点火光，谁也烧不到！ */
+			}
+
+			PerennialSeed: {
+				DisplayName: 永恒种子
+				/* Tooltip: 长盛不衰 */
+			}
+
+			WeakAstralArrow: {
+				DisplayName: 尘星箭
+				/* Tooltip: 蠕虫说，“是的我有很多父亲” */
+			}
+
+			WeakAstralBullet: {
+				DisplayName: 尘星子弹
+				/* Tooltip:
+					'''
+					力量还不够......
+					在击败被星辉瘟疫侵蚀的机械巨兽后，进化
+					''' */
+			}
+
+			ElementalBullet: {
+				DisplayName: 天体萝卜
+				Tooltip: 每命中四次，便随机引动一根天界柱的微弱力量
+			}
+
+			GoldenFeatherArrow: {
+				DisplayName: 金羽箭
+				Tooltip:
+					'''
+					可能会吸引某些小东西
+					击中敌人且未暴击时召唤红色的闪电
+					'''
+			}
+
+			MirageArrow: {
+				DisplayName: 幻境箭
+				Tooltip: 我给你留了（至少）两箭！
+			}
+
+			SoulBullet: {
+				DisplayName: 魂弹
+				Tooltip: 噢！如此悲惨的结局！
+			}
+
+			BloodBullet: {
+				DisplayName: 血弹
+				Tooltip: 有概率从敌人身上偷取生命
+			}
+
+			DesertFeatherArrow: {
+				DisplayName: 荒漠羽箭
+				Tooltip: “它们还在秃鹰身上的时候可没这么快啊”
+			}
+
+			ElectricArrow: {
+				DisplayName: 闪电箭
+				Tooltip: “追逐风暴”
+			}
+
+			PearlArrow: {
+				DisplayName: 珍珠箭
+				Tooltip: 被摧毁时生成更小的碎片
+			}
+
+			PearlBullet: {
+				DisplayName: 珍珠子弹
+				Tooltip:
+					'''
+					可以穿透两个敌人
+					命中的敌人会被减速
+					'''
+			}
+
+			RottenBullet: {
+				DisplayName: 腐烂子弹
+				Tooltip:
+					'''
+					开火时射出一小片霰弹
+					“它还在蠕动，增殖，似乎永远也不会被耗尽”
+					'''
+			}
+
+			SPBullet: {
+				DisplayName: 棱晶子弹
+				Tooltip: 破碎时释放一束洋流
+			}
+
+			VictideArrow: {
+				DisplayName: 胜潮箭
+				Tooltip:
+					'''
+					在水下移动更快且伤害提升至2倍
+					“拿我的高压气瓶来”
+					'''
+			}
+
+			VictideBullet: {
+				DisplayName: 胜潮子弹
+				Tooltip:
+					'''
+					在水下移动更快且伤害提升至2倍
+					“拿我的高压气瓶来”
+					'''
+			}
+
+			WulfrumArrow: {
+				DisplayName: 钨钢箭
+				Tooltip:
+					'''
+					太重，太沉，钨钢根本不适合造箭。
+					“真的吗？”
+					'''
+			}
+
+			WulfrumBullet: {
+				DisplayName: 废钢弹
+				Tooltip:
+					'''
+					激发出具有轻微追踪能力的钨钢光线，光线具有10点护甲穿透
+					最后的波纹，小子
+					'''
+			}
+
+			Chengying_Fumo: {
+				DisplayName: 精美毛绒玩具
+				Tooltip: 你要明白，我们不能用温柔去应对黑暗，要用火。
+			}
+
+			ChewingGum: {
+				DisplayName: 专注口香糖
+				Tooltip:
+					'''
+					增加枪的可视范围（右键点击可缩小）
+					手持枪械类武器时，显示一条瞄准线，并将光标替换为准星
+					'''
+			}
+
+			ChewingGun: {
+				DisplayName: 口枪糖
+				Tooltip: 勉强能冲
+			}
+
+			HardTack: {
+				DisplayName: 圣金源压缩饼干
+				Tooltip:
+					'''
+					{$CommonItemTooltip.MajorStats}
+					光是看上一眼就饱了
+					'''
+			}
+
+			HardTackChest: {
+				DisplayName: 圣金源保险箱
+				/* Tooltip: "{$CommonItemTooltip.RightClickToOpen}" */
+			}
+
+			KnowledgeAuric: {
+				DisplayName: 圣金源压缩饼干
+				Tooltip:
+					'''
+					军队许久未开拔出征，朕的饼干都碎了！
+					咱们这儿烂一点，后勤处就烂一片！
+					咱们要是全烂了，泰拉各地就会揭竿而起，让咱们死无葬身之地呀，想想吧……
+					'''
+			}
+
+			SpectreRifle: {
+				DisplayName: 幽灵狙击枪
+				Tooltip: 将火枪子弹转化为强大的追踪灵魂弹
+			}
+
+			Aerocket: {
+				DisplayName: 天蓝浮雷
+				Tooltip: 会爆炸出跟踪羽毛的滞空诡雷
+			}
+
+			BeenadeLauncher: {
+				DisplayName: 蜜蜂掷弹筒
+				Tooltip:
+					'''
+					使用手榴弹作为弹药
+
+					'''
+			}
+
+			MushroomMortar: {
+				DisplayName: 蘑菇迫击炮
+				Tooltip:
+					'''
+					种蘑菇
+					没做完呢急啥
+					'''
+			}
+
+			PlaguenadeLauncher: {
+				DisplayName: 瘟疫蜜蜂掷弹筒
+				Tooltip:
+					'''
+					使用手榴弹作为弹药
+
+					'''
+			}
+
+			SandRocket: {
+				DisplayName: 钻地导弹
+				Tooltip:
+					'''
+					在物块中自动寻的
+					在沙子中移动更快
+					'''
+			}
+
+			SandWorm: {
+				DisplayName: 沙狗
+				Tooltip:
+					'''
+					发射一个易碎的刺球
+					每攻击四次额外发射一小波沙暴
+					'''
+			}
+		}
+
+		Buffs: {
+			Focus: {
+				DisplayName: 专注
+				Description: 我可以耗上一整天
+			}
+
+			Heal: {
+				DisplayName: 治疗之雨
+				Description:
+					'''
+					生命再生速度提高
+					今天算你走运，虫......不，没什么，你听错了
+					'''
+			}
+		}
+
+		NPCs: {
+			QianXing: {
+				/* DisplayName: 弹药商 */
+			}
+		}
+
+		Keybinds: {
+			Trippy: {
+				/* DisplayName: Trippy */
+			}
+		}
+
+		Homeless1: 让我想想，既然能见到我，那你玩的一定是射手吧！
+		Homeless2: 居然连一个房间也没有，你连最基本的npc监狱都不会造吗？真是弱诶。
+		Any1: 已经两分钟没有吃东西了，好饿啊...你有什么吃的吗？
+		Any2: 我为什么扛着这把斧子？因为它曾经可是有着44点攻击力的开荒神斧啊！
+		Any3: 如果你开始无聊到翻npc对话了，建议去找个人陪你联机。
+		Any4: 自从我来了以后，你是不是都不肝弹药材料了？
+		Day1: 开服务器真是一个累活儿，身为服主得解决他们各种问题，真的累人。
+		Day2: 我的习惯是每开一个新周目就会把人物命名为xx代千星，现在估计到25代了。
+		Day3: 我可是有20000滴血啊，不出意外应该能活到你毕业吧。
+		Day4: 不要乱摸尾巴，这不礼貌哦。
+		Night1: 大晚上的找我做什么呀，夜猫子也经不起你这么折腾啊。
+		Night2: 如果是我我会选择使用魔法日晷，而不是待在晚上无所事事。
+		Night3: 坠星......很棒的东西，收集300颗应该就够了。
+		Night4: 不许摸那里！那里不可以
+		BM1: 快去刷怪！别在这浪费时间！
+		BM2: 你打多少个血珠了？
+		Party: 没卵用的事件...有价值的也就那块蛋糕了。
+		HateAnger: 这个小屁孩我早看不顺眼了，必须给他安排一个高级监狱。
+		Goblin1: 还好这是灾厄，不然哥布林工匠
+		Goblin2: 能把你的钱包掏干净。
+		/* Golbin1FjellGolbin2: Mods.CalamityAmmo.Golbin1FjellGolbin2 */
+		/* Golbin1: Mods.CalamityAmmo.Golbin1 */
+		/* Golbin2: Mods.CalamityAmmo.Golbin2 */
+	}
+}

@@ -1,0 +1,215 @@
+Mods: {
+	CalamityAmmo: {
+		TownNPCMood: {
+			QianXing: {
+			}
+		}
+
+		Projectiles: {
+			Magic: {
+			}
+
+			Typeless: {
+			}
+		}
+
+		Items: {
+			ArcaneQuiver: {
+			}
+
+			EvilMushroom: {
+			}
+
+			FastHolster: {
+			}
+
+			GrapeLauncher: {
+			}
+
+			InfectedCrabGill: {
+			}
+
+			LifeMushroom: {
+			}
+
+			MarvelousMycelium: {
+			}
+
+			ModifiedCoil: {
+			}
+
+			MushroomUnitedNations: {
+			}
+
+			OdddMushroom: {
+			}
+
+			SuperCoil: {
+			}
+
+			TitaniumCoil: {
+			}
+
+			WulfrumCoil: {
+			}
+
+			AstralArrow: {
+			}
+
+			AstralBullet: {
+			}
+
+			DazzlingAstralArrow: {
+			}
+
+			DazzlingAstralBullet: {
+			}
+
+			FossilArrow: {
+			}
+
+			FossilBullet: {
+			}
+
+			HydrothermicArrow: {
+			}
+
+			HydrothermicBullet: {
+			}
+
+			NapalmBullet: {
+			}
+
+			PerennialSeed: {
+			}
+
+			WeakAstralArrow: {
+			}
+
+			WeakAstralBullet: {
+			}
+
+			ElementalBullet: {
+			}
+
+			GoldenFeatherArrow: {
+			}
+
+			MirageArrow: {
+			}
+
+			SoulBullet: {
+			}
+
+			BloodBullet: {
+			}
+
+			DesertFeatherArrow: {
+			}
+
+			DesertFeather: {
+			}
+
+			ElectricArrow: {
+			}
+
+			PearlArrow: {
+			}
+
+			PearlBullet: {
+			}
+
+			RottenBullet: {
+			}
+
+			SPBullet: {
+			}
+
+			VictideArrow: {
+			}
+
+			VictideBullet: {
+			}
+
+			WulfrumArrow: {
+			}
+
+			WulfrumBullet: {
+			}
+
+			Chengying_Fumo: {
+			}
+
+			ChewingGum: {
+			}
+
+			ChewingGun: {
+			}
+
+			HardTack: {
+			}
+
+			HardTackChest: {
+			}
+
+			KnowledgeAuric: {
+			}
+
+			SpectreRifle: {
+			}
+
+			Aerocket: {
+			}
+
+			BeenadeLauncher: {
+			}
+
+			MushroomMortar: {
+			}
+
+			PlaguenadeLauncher: {
+			}
+
+			SandRocket: {
+			}
+
+			SandWorm: {
+			}
+
+			Paper: {
+			}
+
+			Paper2: {
+			}
+
+			DazzlingAstralArrowNew: {
+			}
+
+			DivineArrow: {
+			}
+
+			DivineBullet: {
+			}
+
+			AuricBullet: {
+				// DisplayName: Auric Bullet
+				// Tooltip: ""
+			}
+		}
+
+		Buffs: {
+			Focus: {
+			}
+
+			Heal: {
+			}
+		}
+
+		NPCs: {
+			QianXing: {
+				TownNPCMood: {
+				}
+			}
+		}
+	}
+}

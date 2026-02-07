@@ -1,0 +1,12 @@
+﻿[h2][url=https://discord.gg/bmra2qDvAF] Join our discord sever [/url][/h2]
+
+Calamity Ranger Expansion is a mod that provides several extra ranger ammunitions and accessories, in order to provides more options for rangers and play for fun, instead of doing strict researches about "Who is the strongest equipment set now" or "How overpowered this thing is" all day long;
+
+[h1]About the recipes: [/h1]
+Please use the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2619954303] Recipe Browser [/url] mod.
+
+[h1]About ammunitions effects:[/h1] 
+In the game there are simple text descriptions. As for their specific functions，I hope you guys can explore and discover them by yourself 
+
+[h1]At last[/h1]
+Thank very much for the source code reference provided by [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2930931197] Homeward Journey [/url] mod and the author's gracious teaching.

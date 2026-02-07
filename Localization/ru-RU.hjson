@@ -1,0 +1,719 @@
+Mods: {
+	CalamityAmmo: {
+		TownNPCMood: {
+			QianXing: {
+				Content: Я хорошо с тобой лажу.
+				NoHome: У вас есть какие-нибудь свободные комнаты? Я не хочу жить в одной комнате с другими.
+				LoveSpace: Достаточно личного пространства, чтобы мне было очень комфортно. Даже если я сделаю что-нибудь тихо, меня не найдут
+				FarFromHome: Что ж, не могли бы вы одолжить мне свое волшебное зеркало?
+				DislikeCrowded: Многие люди заняты, но я не могу уснуть из-за шума.
+				HateCrowded: Собираться вместе и заниматься сексом - не самое лучшее занятие.
+				LikeBiome: Это место полно опасностей и сокровищ, мне это нравится. Ты готов умереть в любое время?
+				LoveBiome: Даже не думайте об этом, выбирайте лес только для удобства совершения покупок.
+				DislikeBiome: Здешняя песчаная буря делает меня грязным, могу я переехать в другое место?
+				HateBiome: Ни один кот в здравом уме не прыгнет в океан, чтобы наловить рыбы на ужин.
+				LikeNPC: "{NPCName}В принципе, он не продает никаких объедков, он довольно хорош."
+				LikeNPC_Princess: Почему мне это нравится {NPCName}? Официальный ответ таков: "Каждому НПС нравится принцесса." Частый ответ таков: "Посох резонанса слишком прост в использовании."
+				LoveNPC: "{NPCName} Хорошо общается со мной, это потому, что у нас обоих звериные уши?"
+				DislikeNPC: Ежедневно {NPCName} соревнуйтесь со мной в бизнесе.
+				HateNPC: "{NPCName} Этот от природы злой мальчишка не заслуживает того, чтобы жить рядом со мной!"
+			}
+		}
+
+		Projectiles: {
+			Magic: {
+				// HydrothermicExplosion.DisplayName: Hydrothermic Explosion
+				// WulfrumBoltRanged.DisplayName: Wulfrum Bolt
+			}
+
+			Typeless: {
+				// DivineGeodeMeteor.DisplayName: Divine Geode Meteor
+				// DivineGeodeMeteor2.DisplayName: Divine Geode Meteor
+			}
+
+			ArcaneArrow_Proj.DisplayName: Тайная Стрела
+			Crabulon_Spore.DisplayName: Спора Крабулона
+			HealOrb.DisplayName: Исцеляющая Руда
+			RadioAura.DisplayName: Красная Аура Молнии
+			Shroomere.DisplayName: Шрумер
+			Spore1.DisplayName: Облако Спор
+			Spore2.DisplayName: Облако Спор
+			Spore3.DisplayName: Облако Спор
+			HydrothermicArrow_Proj.DisplayName: Гидротермическая Стрела
+			HydrothermicExplosion.DisplayName: Гидротермальный Взрыв
+			HydrothermicBullet_Proj.DisplayName: Гидротермическая Пуля
+			HydrothermicVolcano.DisplayName: "Гидротермальный Вулкан "
+			VolcanicFireballRanged.DisplayName: Вулканический Огненный Шар
+			MirageArrow_Proj.DisplayName: Стрела Миража
+			MirageArrow_Proj2.DisplayName: Стрела Миража
+			SoulBullet_Proj.DisplayName: Призрачный Дух
+			Chengying_Fumo_Proj.DisplayName: Фумо Чен Ина
+			_BloodBullet.DisplayName: Кровавая Пуля
+			_DesertFeatherArrow.DisplayName: Перьевая Стрела
+			_PearlArrow.DisplayName: Жемчужная Стрела
+			_PearlBullet.DisplayName: Жемчужная Пуля
+			_PrismBullet.DisplayName: Призматическая Пуля
+			_RottenBullet.DisplayName: Гнилая Пуля
+			_RottenBullet2.DisplayName: Гнилая Пуля
+			_SeaBubble.DisplayName: Течение
+			_VictideArrow.DisplayName: Стрела Вистиды
+			_VictideBullet.DisplayName: Пуля Вистиды
+			_WulfArrow.DisplayName: Вольфрумовая Стрела
+			_AstralArrow.DisplayName: Астральная Стрела
+			_AstralBullet.DisplayName: Астральная Пуля
+			_AstralMine.DisplayName: Астральная шахта
+			_AstralShot.DisplayName: Астральный лазер
+			_AstralStar.DisplayName: AАстральная звезда
+			_AstralStar2.DisplayName: Астральная звезда
+			_DazzlingAstralArrow.DisplayName: Ослепительная астральная стрела
+			_DazzlingAstralBullet.DisplayName: Астральная Пуля
+			_Flower.DisplayName: Многолетний Цветок
+			_FossilArrow.DisplayName: Ископаемая Стрела
+			_FossilBullet.DisplayName: Ископаемая Пуля
+			_FossilShard.DisplayName: Фрагменты Окаменелостей
+			_FossilShard2.DisplayName: Фрагменты Окаменелостей
+			_NapalmBullet.DisplayName: Напалмовая Пуля
+			_Seed.DisplayName: Многолетнее Семя
+			_WeakAstralArrow.DisplayName: Астральная Пуля
+			_WeakAstralBullet.DisplayName: Слабая Астральная Пуля
+			FakeSeaStar1.DisplayName: Водная Звезда
+			FakeSeaStar2.DisplayName: Хрупкая Звезда
+			_ElementalArrow.DisplayName: Элементарная Стрела
+			_ElementalBullet.DisplayName: Тертая Небесная Морковь
+			_GoldenFeatherArrow.DisplayName: Стрела С Золотым Пером
+			_RedLightning.DisplayName: Красная Молния
+			HealingRain.DisplayName: Целебный Дождь
+			HealingStarcloud.DisplayName: Исцеляющая Туманность
+			LightningVortex.DisplayName: Молниеносный Вихрь
+			MetorSolar.DisplayName: Солнечный Огненный Шар
+			WulfrumBoltRanged.DisplayName: Вольфрумовый снаряд
+			AeroGrenade.DisplayName: Аэроракета
+			AeroMine.DisplayName: Аэроракета
+			AeroRocket.DisplayName: Аэроракета
+			AeroSnowman.DisplayName: Аэроракета
+			Mushroom_ClusterRocketI.DisplayName: Гриб
+			Mushroom_ClusterRocketII.DisplayName: Гриб
+			Mushroom_DryRocket.DisplayName: Гриб
+			Mushroom_HoneyRocket.DisplayName: Гриб
+			Mushroom_LavaRocket.DisplayName: Гриб
+			Mushroom_MiniNukeRocketI.DisplayName: Гриб
+			Mushroom_MiniNukeRocketII.DisplayName: Гриб
+			Mushroom_RocketI.DisplayName: Гриб
+			Mushroom_RocketII.DisplayName: Гриб
+			Mushroom_RocketIII.DisplayName: Гриб
+			Mushroom_RocketIV.DisplayName: Гриб
+			Mushroom_WetRocket.DisplayName: Гриб
+			Sand_Rocket.DisplayName: Земельно-проникающая ракета
+			SandGrenade.DisplayName: Земельно-проникающая ракета
+			SandMine.DisplayName: Земельно-проникающая ракета
+			SandSnowman.DisplayName: Земельно-проникающая ракета
+			Spike.DisplayName: Шип
+			SpikyBall.DisplayName: Шипастый мяч
+			ThePack_ClusterRocketI.DisplayName: PR
+			ThePack_ClusterRocketII.DisplayName: PR
+			ThePack_DryRocket.DisplayName: PR
+			ThePack_HoneyRocket.DisplayName: PR
+			ThePack_LavaRocket.DisplayName: PR
+			ThePack_MiniNukeRocketI.DisplayName: PR
+			ThePack_MiniNukeRocketII.DisplayName: PR
+			ThePack_RocketI.DisplayName: PR
+			ThePack_RocketII.DisplayName: PR
+			ThePack_RocketIII.DisplayName: PR
+			ThePack_RocketIV.DisplayName: PR
+			ThePack_SandRocket.DisplayName: PR
+			ThePack_WetRocket.DisplayName: PR
+			ThePackLittle_ClusterRocketI.DisplayName: PR
+			ThePackLittle_ClusterRocketII.DisplayName: PR
+			ThePackLittle_DryRocket.DisplayName: PR
+			ThePackLittle_HoneyRocket.DisplayName: PR
+			ThePackLittle_LavaRocket.DisplayName: PR
+			ThePackLittle_MiniNukeRocketI.DisplayName: PR
+			ThePackLittle_MiniNukeRocketII.DisplayName: PR
+			ThePackLittle_RocketI.DisplayName: PR
+			ThePackLittle_RocketII.DisplayName: PR
+			ThePackLittle_RocketIII.DisplayName: PR
+			ThePackLittle_RocketIV.DisplayName: PR
+			ThePackLittle_WetRocket.DisplayName: PR
+			_AstralFlame.DisplayName: Астральный Кристалл
+			Explode.DisplayName: Взрыв
+			GrapeProj.DisplayName: Виноградный взрыв
+			GrapeShot.DisplayName: Виноградный выстрел
+			// Summon.VolcanicFireballRanged.DisplayName: Volcanic Fireball
+			StcikyChewingGum.DisplayName: Жевательная резинка
+			// _DazzlingAstralArrowNew.DisplayName: Dazzling Astral Arrow
+			// DivineArrow_Proj.DisplayName: Divine Arrow
+			// DivineGeodeMeteor.DisplayName: Divine Geode Meteor
+			// DivineGeodeMeteor2.DisplayName: Divine Geode Meteor
+			// DivineBullet_Proj.DisplayName: Divine Bullet
+			// DeathMarkRound.DisplayName: Mark Round
+			// IceBomb.DisplayName: Ice Bomb
+			// IceRain.DisplayName: Ice Rain
+			// BrimstoneHellblast.DisplayName: Brimstone Hellblast
+			// ElectricStream.DisplayName: Electricity Surge
+		}
+
+		Items: {
+			ArcaneQuiver: {
+				DisplayName: Чародейский колчан
+				Tooltip:
+					'''
+					Позволяет Расходовать Ману Для Зачарования Стрел И Увеличения Урона При Удерживании Лука Или Револьвера,
+					Расход Маны И Шкала Урона Зависят От Времени Использования Оружия.
+					Болезнь Маны Также Уменьшает Дальнобойный Урон Игрока
+					Значительно Увеличивает Скорость Стрелы
+					20% Шанс Не Использовать Стрелы
+					Энергия, Могущество. Мои люди пристрастились к этому!
+					'''
+			}
+
+			EvilMushroom: {
+				DisplayName: Злой Гриб
+				Tooltip: И Вы, И Враг Получаете Урон.
+			}
+
+			FastHolster: {
+				DisplayName: "Быстрая Кобура "
+				Tooltip:
+					'''
+					Уменьшает Время Использования Оружия На 10%
+					Уменьшьшает Шанс Критического Удара В Дальнем Бою На 4%
+					Не Беспокойтесь О Своей Точности. Сделайте Достаточное Количество Снимков, И Вы Гарантированно Что-Нибудь Получите!
+					'''
+			}
+
+			GrapeLauncher: {
+				DisplayName: Виноградный выстрел
+				Tooltip: На Вашей Лужайке Зомби
+			}
+
+			InfectedCrabGill: {
+				DisplayName: Зараженные Жабры Краба
+				Tooltip:
+					'''
+					Со Временем Вызывает Споры, Которые Наносят Урон Врагам
+					Вероятность Того, Что Выстрелят Дополнительные Грибковые Патроны, Которые Распадутся При Смерти
+					Уменьшьшает Регенерацию Здоровья На 1
+					'''
+			}
+
+			LifeMushroom: {
+				DisplayName: Живой Гриб
+				Tooltip: Генерирует Рядом С Игроком Исцеляющий Гриб Случайным Образом И Восстанавливает 15 ед. Здоровья После Сбора.
+			}
+
+			MarvelousMycelium: {
+				DisplayName: Чудесный Мицелий
+				Tooltip:
+					'''
+					10% увеличение урона в дальнем бою
+					Слегка увеличивает скорость всех дальнобойных снарядов
+					Смерть продолжается, жизнь продолжается, и жизнь вскоре достигает смерти.
+					'''
+			}
+
+			ModifiedCoil: {
+				DisplayName: "Модифицированная катушка "
+				Tooltip:
+					'''
+					Урон дальнего боя увеличен до 1,07x.
+					Слегка увеличивает скорость всех дальнобойных снарядов.
+					 Внимание! Может произойти утечка тока.
+					'''
+			}
+
+			MushroomUnitedNations: {
+				DisplayName: Скрещенный Гриб
+				Tooltip:
+					'''
+					Обладает эффектом живого гриба, Злого гриба, грибкового панциря, инфицированных крабовых жабр, Чудесного мицелия и Странного гриба.
+					Грибовидная снайперская винтовка парит над вашей головой, расстреливая врагов, которые оказываются в пределах досягаемости.
+					 уменьшая вероятность того, что враги нацелятся на вас.
+					'''
+			}
+
+			OdddMushroom: {
+				DisplayName: Странный гриб
+				Tooltip:
+					'''
+					Когда скрываешь визуальные зерна, появляется эффект Триппи.
+					 Вы не всегда можете доверять тому, что видите.
+					'''
+			}
+
+			SuperCoil: {
+				DisplayName: "Адамантитовая катушка "
+				Tooltip:
+					'''
+					Увеличен шанс критического удара на дальней дистанции, усиление зависит от скорости атаки.
+					Среднее увеличение скорости всех дальнобойных снарядов.
+					'''
+			}
+
+			TitaniumCoil: {
+				DisplayName: "Титановая катушка "
+				Tooltip:
+					'''
+					Увеличенный дальнобойный урон, усиление зависит от скорости атаки.
+					Среднее увеличение скорости всех дальнобойных снарядов.
+					'''
+			}
+
+			WulfrumCoil: {
+				DisplayName: "Вольфрумовая катушка "
+				Tooltip:
+					'''
+					На 10% увеличен дальнобойный урон
+					Незначительно увеличивает скорость всех дальнобойных снарядов
+					'''
+			}
+
+			AstralArrow: {
+				DisplayName: Астральная стрела
+				Tooltip: Улучшится после того, как Аструм Деус будет побежден
+			}
+
+			AstralBullet: {
+				DisplayName: Астральная пуля
+				Tooltip: Улучшится после того, как Аструм Деус будет побежден
+			}
+
+			DazzlingAstralArrow: {
+				DisplayName: Ослепительная астральная стрела
+				Tooltip: Посмотри на небо, звезды выстраиваются в ряд.
+			}
+
+			DazzlingAstralBullet: {
+				DisplayName: Ослепительная астральная пуля
+				Tooltip: планеты..везды..насколько они могущественны?
+			}
+
+			FossilArrow: {
+				DisplayName: Ископаемая стрела
+				Tooltip: Твердые окаменелости разрушают оборону противника и вызывают отравление серной кислотой.
+			}
+
+			FossilBullet: {
+				DisplayName: Ископаемая пуля
+				Tooltip: Твердые окаменелости разрушают оборону противника и вызывают отравление серной кислотой.
+			}
+
+			HydrothermicArrow: {
+				DisplayName: Гидротермическая стрелка
+				Tooltip: Ты осмеливаешься ударить своим копьем по моему щиту? Это закончится тем, что ты разлетишься на куски!
+			}
+
+			HydrothermicBullet: {
+				DisplayName: Гидротермическая пуля
+				Tooltip: Мое тело горит при температуре более 1400 градусов!
+			}
+
+			NapalmBullet: {
+				DisplayName: Напалмовая пуля
+				Tooltip: Маленькая искра никого не может обжечь.
+			}
+
+			PerennialSeed: {
+				DisplayName: Многолетнее семя
+				Tooltip: Цветите и приносите плоды на врагов.
+			}
+
+			WeakAstralArrow: {
+				DisplayName: Слабая астральная стрела
+				Tooltip: Червь сказал: "Да, у меня много отцов."
+			}
+
+			WeakAstralBullet: {
+				DisplayName: Слабая астральная пуля
+				Tooltip:
+					'''
+					Мощности недостаточно...
+					Улучшится после того, как Аструм Ареус будет побежден!
+					'''
+			}
+
+			ElementalBullet: {
+				DisplayName: Небесная морковка
+				Tooltip: Каждые четыре удара по врагам вы будете случайным образом призывать небольшую силу одного небесного столпа
+			}
+
+			GoldenFeatherArrow: {
+				DisplayName: Стрела с золотым пером
+				Tooltip:
+					'''
+					Может привлечь что-то маленькое.
+					Вы Вызывайте Красную Молнию, если не получили критического удара.
+					'''
+			}
+
+			MirageArrow: {
+				DisplayName: Стрела миража
+				Tooltip: Еще два, еще два, еще два, и еще два
+			}
+
+			SoulBullet: {
+				DisplayName: Пуля души
+				Tooltip:
+					'''
+					Может привлечь что-то маленькое.
+					ВЫ Вызывайте красную молнию, если не получили критического удара.
+					'''
+			}
+
+			BloodBullet: {
+				DisplayName: Кровавая пуля
+				Tooltip: Крадет жизнь у варгов.
+			}
+
+			DesertFeatherArrow: {
+				DisplayName: Перьевая стрела
+				Tooltip: "Когда перо все еще было на грифе, все происходило не так быстро "
+			}
+
+			DesertFeather: {
+				// DisplayName: Desert Feather
+				// Tooltip: ""
+			}
+
+			ElectricArrow: {
+				DisplayName: Электрическая стрела
+				Tooltip: "В погоне за бурей "
+			}
+
+			PearlArrow: {
+				DisplayName: Жемчужная стрела
+				Tooltip: "Генерирует меньшие фрагменты при уничтожении "
+			}
+
+			PearlBullet: {
+				DisplayName: Жемчужная пуля
+				Tooltip:
+					'''
+					Может пронзить двух врагов.
+					Поражая врагов, замедляйте их.
+					'''
+			}
+
+			RottenBullet: {
+				DisplayName: Гнилая пуля
+				Tooltip:
+					'''
+					Распадается на несколько мелких кусочков гнилой материи при пожаре.
+					 "Она все еще ползет и размножается, и, кажется, никогда не будет исчерпана"
+					'''
+			}
+
+			SPBullet: {
+				DisplayName: Пуля из морской призмы
+				Tooltip: Выпускает струю воды во время дробления
+			}
+
+			VictideArrow: {
+				DisplayName: Вистидная стрела
+				Tooltip:
+					'''
+					Двигайтесь быстрее под водой и увеличивайте урон в 2 раза
+					 'Возьми мой газовый баллон высокого давления '
+					'''
+			}
+
+			VictideBullet: {
+				DisplayName: Вистидная Пуля
+				Tooltip:
+					'''
+					Двигайтесь быстрее под водой и увеличивайте урон в 2 раза
+					 'Возьми мой газовый баллон высокого давления '
+					'''
+			}
+
+			WulfrumArrow: {
+				DisplayName: Вольфрумовая стрела
+				Tooltip:
+					'''
+					Он слишком тяжелый, чтобы вообще делать стрелы. 
+					 'Реально ?' 
+					'''
+			}
+
+			WulfrumBullet: {
+				DisplayName: Вольфрумовая осколочная пуля
+				Tooltip:
+					'''
+					Излучает энергетический луч вольфрума с небольшой способностью к отслеживанию. Луч имеет базовое пробивание брони 10.  
+					 Последний хамон, сын.
+					'''
+			}
+
+			Chengying_Fumo: {
+				DisplayName: Фумо Чен Ина
+				Tooltip: Мы не можем справиться с тьмой мягко, но с огнем...
+				/* TooltipDay:
+					'''
+					A toast to all who sought to kill me! 
+					You failed.
+					''' */
+			}
+
+			ChewingGum: {
+				DisplayName: Жевательная резинка
+				Tooltip:
+					'''
+					Увеличивает дальность обзора для оружия (щелкните правой кнопкой мыши, чтобы уменьшить масштаб)
+					Когда держите пистолет, отобразите линию прицеливания и замените курсор на мушку прицела.
+					'''
+			}
+
+			ChewingGun: {
+				DisplayName: Жевательная резинка
+				Tooltip: Едва Пригодная Для Использования
+			}
+
+			HardTack: {
+				DisplayName: Жесткий Подход
+				Tooltip:
+					'''
+					{$CommonItemTooltip.MajorStats}
+					Всего Один Взгляд, И Ты Сыт
+					'''
+			}
+
+			HardTackChest: {
+				DisplayName: Аурический Сундук
+				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+			}
+
+			KnowledgeAuric: {
+			}
+
+			SpectreRifle: {
+				DisplayName: Винтовка "Спекта"
+				Tooltip: Превращает мушкетные пули в мощные самонаводящиеся души
+			}
+
+			Aerocket: {
+				DisplayName: Аэроракета
+				Tooltip: Щелкните правой кнопкой мыши, чтобы переключить снаряд на воздушную ловушку.
+			}
+
+			BeenadeLauncher: {
+				DisplayName: Бинарная установка
+				Tooltip:
+					'''
+					Стреляет хрупким колючим шаром
+					Каждые четыре атаки будут стрелять 6 песчаными взрывами.
+					'''
+			}
+
+			MushroomMortar: {
+				DisplayName: Грибная ступка
+				Tooltip: Выращивает грибы
+			}
+
+			PlaguenadeLauncher: {
+				DisplayName: " Пусковая установка чумы"
+				Tooltip:
+					'''
+					Стреляет хрупким колючим шаром
+					Каждые четыре атаки будут стрелять 6 песчаными взрывами.
+					'''
+			}
+
+			SandRocket: {
+				DisplayName: Земельно-взрывательная ракета
+				Tooltip:
+					'''
+					Может проходить по блокам и выслеживать врагов
+					Вы Двигаетесь быстрее по песчаным блокам!
+					'''
+			}
+
+			SandWorm: {
+				DisplayName: Песчаный пес
+				Tooltip:
+					'''
+					Выстреливает хрупким колючим шаром
+					Каждые четыре атаки будут производить 6 песчаных взрывов
+					'''
+			}
+
+			Paper: {
+				DisplayName: Бумага из древесной массы
+				// Tooltip: ""
+			}
+
+			Paper2: {
+				DisplayName: Бумага из бамбуковой массы
+				// Tooltip: ""
+			}
+
+			DazzlingAstralArrowNew: {
+				// DisplayName: Dazzling Astral Arrow
+				/* Tooltip:
+					'''
+					"Look to the skies! The stars align!"
+					"Are you sure about that?"
+					''' */
+			}
+
+			DivineArrow: {
+				// DisplayName: Divine Arrow
+				// Tooltip: Summons a meteorite that is more exciting than Elysian hits the unlucky guy
+			}
+
+			DivineBullet: {
+				// DisplayName: Divine Bullet
+				// Tooltip: Causes a more violent Holy Fire explosion
+			}
+
+			// Lore.KnowledgeAuric.DisplayName: Knowledge Auric
+
+			ElementalArrow: {
+				// DisplayName: Elemental Arrow
+				/* Tooltip:
+					'''
+					Each penetrated enemy will increases arrow damage by 10%
+					The damage increase obtained according to above method can be effective up to 4 times.
+					Causes Elemental Mix
+					''' */
+			}
+
+			DeathMarkMagnum: {
+				// DisplayName: Death Mark Magnum
+				/* Tooltip:
+					'''
+					Shots reduce enemy protection
+					"Care to dance with death?"
+					''' */
+			}
+
+			FrigidCoil: {
+				// DisplayName: Frigid Coil
+				/* Tooltip:
+					'''
+					Decreases ranged speed by 10%
+					Moderately increases the velocity of ranged projectiles
+					Ranged projectiles will cause Frostburn
+					Places ice bombs around the enemy you hit
+					This effect has a 5 second cooldown
+					''' */
+			}
+
+			ScorchingCoil: {
+				// DisplayName: Scorching Coil
+				/* Tooltip:
+					'''
+					Increases ranged critical strike chance by 7%
+					Moderately increases the velocity of ranged projectiles
+					Ranged projectiles will cause Brimstone Flames
+					Shoots a arc-shaped barrage of 6 Brimstone Hellblasts every 6 hits
+					Projectiles that can damage enemeies multiple times will only be counted once
+					''' */
+			}
+
+			AutoCalculationCoil: {
+				// DisplayName: Draedon's Auto-Calculation Coil
+				/* Tooltip:
+					'''
+					Moderately increases the velocity of ranged projectiles
+					Ranged projectiles will home in enemies automatically
+					Press [KEY] to switch between different search algorithms
+					''' */
+			}
+
+			TransformerCoil: {
+				// DisplayName: Transformer Coil
+				/* Tooltip:
+					'''
+					Significantly increases the velocity of ranged projectiles
+					Ranged projectiles will cause Electrified, you are immune to Electrified
+					A surge of electricity will flicker on the last two enemies you hit
+					''' */
+			}
+
+			AuricBullet: {
+				// DisplayName: Auric Bullet
+				// Tooltip: ""
+			}
+		}
+
+		Buffs: {
+			Focus: {
+				DisplayName: Фокус
+				Description: Я могу делать это весь день
+			}
+
+			Heal: {
+				DisplayName: Выздоровление
+				Description:
+					'''
+					Скорость регенерации жизни увеличена
+					Тебе сегодня повезло, червь... Нет, ничего, ты ослышался.
+					'''
+			}
+		}
+
+		NPCs: {
+			QianXing: {
+				TownNPCMood: {
+					// Content: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.Content}"
+					// NoHome: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.NoHome}"
+					// FarFromHome: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.FarFromHome}"
+					// LoveSpace: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.LoveSpace}"
+					// DislikeCrowded: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.DislikeCrowded}"
+					// HateCrowded: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.HateCrowded}"
+					// LoveBiome: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.LoveBiome}"
+					// LikeBiome: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.LikeBiome}"
+					// DislikeBiome: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.DislikeBiome}"
+					// HateBiome: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.HateBiome}"
+					// LoveNPC: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.LoveNPC}"
+					// LikeNPC: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.LikeNPC}"
+					// DislikeNPC: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.DislikeNPC}"
+					// HateNPC: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.HateNPC}"
+					// LikeNPC_Princess: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				DisplayName: Торговец Боеприпасами
+			}
+		}
+
+		Bestiary.QianXing: Девушка-кошка, которая дает вам боеприпасы, симпатична внешне и доступна по цене. Имея достаточно денег, вы даже можете попытаться купить ее сами (при условии, что вас не убьют большим топором)..
+		QX: Звездный
+		Glove: Аналогичные эффекты также применимы к стрелку
+
+		Keybinds: {
+			// Odd.DisplayName: Trippy
+			// autoCoil.DisplayName: Automatic Search Algorithm
+		}
+
+		// sld: Automatic Search: the enemy with the lowest defense
+		// shd: Automatic Search: the enemy with the highest defense
+		// selectOff: Automatic Search: off
+		// selectLowLife: Automatic search: Enemy with the lowest health
+		// selectLowLP: Automatic search: Enemy with the lowest life precent
+		// selectNearPlayer: Automatic Search: the enemy closest to the player
+		// selectNearMouse: Automatic Search: the enemy closest to the mouse position
+		//selectLowDefense: Automatic Search: the enemy closest to the mouse position
+		//selectHighDef: Automatic Search: the enemy with the highest defense
+		Homeless1: Хм... если ты меня видишь, значит, ты стрелок!
+		Homeless2: Не могу поверить, что у тебя даже нет комнаты, разве ты не можешь построить обычную комнату для НПС?
+		Any1: Почему я ношу с собой этот топор? Потому что раньше это был божественный боевой топор 44 урона!
+		Any2: Если вы начнете листать переписку НПС, я предлагаю найти кого-нибудь, кто присоединится к вам онлайн.
+		Any3: У вас закончились боеприпасы с тех пор, как я пришел сюда?
+		Any4: Я не ел уже две минуты. Я так голоден... У тебя есть что-нибудь поесть?
+		Day1: Запуск сервера действительно утомляет, так как вам, как владельцу, приходится решать все проблемы.
+		Day2: Моя привычка - называть персонажа "Цяньсин" xx поколения каждый раз, когда я начинаю новую игру, которая сейчас оценивается как 25-е поколение.
+		Day3: У меня 20 000 ХП, без всяких происшествий я смогу прожить до окончания учебы.
+		Day4: Не трогай мой хвост, это невежливо.
+		Night1: Что прикажешь мне делать по ночам? Ночные совы тоже не выносят твоих бед.
+		Night2: Если бы это был я, я бы предпочел использовать волшебные солнечные часы вместо того, чтобы оставаться на ночь и ничего не делать.
+		Night3: Падающие звезды... Отличная штука, 300 должно хватить.
+		Night4: Не трогай там!
+		BM1: Спешите убить монстров, не теряйте здесь время!
+		BM2: Сколько сфер крови у тебя есть?
+		Party: Бесполезное мероприятие... единственная ценность - это торт.
+		HateAnger1: Злость
+		HateAnger2: Мне не нравится этот пацан, я должен устроить для него тюрьму высокого уровня.
+		Goblin1: К счастью, здесь беда, иначе и быть не могло.
+		Goblin2: Гоблин-Лудильщик может опустошить ваш кошелек.
+	}
+}

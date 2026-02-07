@@ -1,0 +1,23 @@
+﻿Calamity Ranger Expansion is a mod that provides several extra ranger ammunitions and accessories, in order to provides more options for rangers and play for fun, instead of doing strict researches about "Who is the strongest equipment set now" or "How overpowered this thing is" all day long;
+
+About the recipes: 
+Please use the Recipe Browser mod.
+
+[h1]About ammunitions effects:[/h1] 
+In the game there are simple text descriptions. As for their specific functions, I hope you guys can explore and discover them by yourself 
+
+[h1]At last[/h1]
+Thank very much for the source code reference provided by Homeward Journey mod and the author's gracious teaching.
+
+
+灾厄射手拓展是一个提供了数种额外射手弹药和饰品的模组，目的在于提供更多的选择以横向拓展射手职业的游戏内容，以及“玩的开心”
+不欢迎嘴巴不干净的不肯好好说话的开口就逆天逆天的游戏装备平衡魔怔人自诩正义前来辱骂
+
+关于获取方式问题：
+请善用合成表Mod（Recipe Browser）自助解决
+
+关于弹药效果问题：
+游戏内有简单的文本说明，至于具体有何种妙用，希望各位能自行探索与发现
+
+[h1]最后[/h1]
+非常感谢旅人归途模组提供的源码参考及其作者的殷切指导（各种意义上都）
