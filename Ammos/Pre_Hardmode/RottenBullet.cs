@@ -1,27 +1,28 @@
-﻿using System;
-using System.IO;
+﻿using CalamityAmmo.Projectiles;
+using CalamityMod;
+using CalamityMod.Items.Materials;
+using CalamityMod.Items.Placeables;
+using CalamityMod.Projectiles.Magic;
+using CalamityMod.Projectiles.Ranged;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
+using ReLogic.Graphics;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 using Terraria;
-using Terraria.UI;
 using Terraria.DataStructures;
+using Terraria.GameContent;
 using Terraria.GameContent.UI;
 using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
 using Terraria.ID;
 using Terraria.Localization;
-using System.Text;
 using Terraria.ModLoader;
-using ReLogic.Graphics;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System.Linq;
-using ReLogic.Content;
-using Terraria.GameContent;
-using CalamityMod.Projectiles.Magic;
-using CalamityMod.Items.Materials;
-using CalamityAmmo.Projectiles;
-using CalamityMod.Projectiles.Ranged;
-using CalamityMod.Items.Placeables;
+using Terraria.UI;
 
 namespace CalamityAmmo.Ammos.Pre_Hardmode
 {
@@ -55,8 +56,9 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(1);
-            recipe.AddIngredient(ModContent.ItemType<RottenMatter>(), 6);
+            recipe.AddIngredient(ItemID.RottenChunk, 12);
             recipe.AddTile(TileID.Anvils);
+            recipe.AddCondition(new Condition(Language.GetTextValue(""), () => DownedBossSystem.downedHiveMind));
             recipe.Register();
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

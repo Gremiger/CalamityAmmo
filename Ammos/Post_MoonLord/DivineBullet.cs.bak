@@ -61,7 +61,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
 			Projectile.DamageType = DamageClass.Ranged;
 			Projectile.MaxUpdates = 5;
 			Projectile.timeLeft = 600;
-			Projectile.Calamity().pointBlankShotDuration = 18;
+			
 		}
 
 		public override void AI()

@@ -178,14 +178,14 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
         public override void OnSpawn(IEntitySource source)
         {
             Player player = Main.player[Projectile.owner];
-            if (Main.rand.NextBool(114514) && !NPC.AnyNPCs(ModContent.NPCType<Bumblefuck>()))
+            if (Main.rand.NextBool(114514) && !NPC.AnyNPCs(ModContent.NPCType<Dragonfolly>()))
                 if (Main.netMode != NetmodeID.MultiplayerClient)
                 {
-                    NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<Bumblefuck>());
+                    NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<Dragonfolly>());
                 }
                 else
                 {
-                    NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, -1, -1, null, player.whoAmI, ModContent.NPCType<Bumblefuck>(), 0f, 0f, 0, 0, 0);
+                    NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, -1, -1, null, player.whoAmI, ModContent.NPCType<Dragonfolly>(), 0f, 0f, 0, 0, 0);
                 }
             base.OnSpawn(source);
         }

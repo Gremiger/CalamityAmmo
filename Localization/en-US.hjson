@@ -591,7 +591,12 @@ Mods: {
 				Tooltip: Causes a more violent Holy Fire explosion
 			}
 
-			Lore.KnowledgeAuric.DisplayName: Knowledge Auric
+			Lore: {
+				KnowledgeAuric: {
+					DisplayName: Knowledge Auric
+					Tooltip: ""
+				}
+			}
 
 			ElementalArrow: {
 				DisplayName: Elemental Arrow

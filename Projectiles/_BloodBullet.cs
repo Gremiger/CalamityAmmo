@@ -35,7 +35,7 @@ namespace CalamityAmmo.Projectiles
 			Projectile.idStaticNPCHitCooldown = 10;//上一个设定为true则被调用，NPC按照弹幕类型来获取多少无敌帧
 			Projectile.netImportant = false;
 			Projectile.extraUpdates = 2;
-			Projectile.Calamity().pointBlankShotDuration = 18;
+			
 		}
 		public override bool? CanCutTiles() => true;
 		public override void AI()

@@ -66,7 +66,7 @@ namespace CalamityAmmo.Weapons
 
         public override void AddRecipes()
         {
-            CreateRecipe(1).AddIngredient(ItemID.SpectreBar, 7).AddIngredient<CoreofEleum>(3).AddTile(TileID.MythrilAnvil).Register();
+            CreateRecipe(1).AddIngredient(ItemID.SpectreBar, 7).AddIngredient<EssenceofEleum>(3).AddIngredient(ItemID.Ectoplasm,3).AddTile(TileID.MythrilAnvil).Register();
         }
     }
 }

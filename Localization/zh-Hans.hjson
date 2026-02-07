@@ -603,7 +603,12 @@ Mods: {
 					'''
 			}
 
-			// Lore.KnowledgeAuric.DisplayName: Knowledge Auric
+			Lore: {
+				KnowledgeAuric: {
+					// DisplayName: Knowledge Auric
+					// Tooltip: ""
+				}
+			}
 
 			ElementalArrow: {
 				DisplayName: 元素之箭

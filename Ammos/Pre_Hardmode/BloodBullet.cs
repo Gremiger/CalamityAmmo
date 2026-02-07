@@ -53,8 +53,7 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(100);
-            recipe.AddIngredient(ModContent.ItemType<BloodOrb>(), 5);
-            recipe.AddIngredient(ModContent.ItemType<BloodSample>(), 5);
+            recipe.AddIngredient(ModContent.ItemType<BloodOrb>(), 8);
             recipe.AddIngredient(ItemID.MusketBall, 100);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();

@@ -38,7 +38,7 @@ namespace CalamityAmmo.Misc
             Item.useStyle = ItemUseStyleID.EatFood;
             Item.value = Item.buyPrice(0, 10, 0, 0);
 			//Item.value = Item.sellPrice(0,10,0,0);
-			Item.rare = ModContent.RarityType<Violet>();
+			Item.rare = 15;
             Item.UseSound = new SoundStyle?(SoundID.Item8);
             Item.autoReuse = false;
             Item.buffType = BuffID.WellFed3;

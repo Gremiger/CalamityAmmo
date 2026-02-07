@@ -21,6 +21,7 @@ using CalamityMod.Projectiles.Magic;
 using CalamityMod.Items.Materials;
 using CalamityAmmo.Projectiles;
 using CalamityMod.Items.Placeables;
+using CalamityMod.Items.Placeables.SunkenSea;
 
 namespace CalamityAmmo.Ammos.Pre_Hardmode
 {

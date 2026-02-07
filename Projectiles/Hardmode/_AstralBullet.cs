@@ -40,7 +40,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
             Projectile.extraUpdates = 2;
             
             AIType = 14;
-            Projectile.Calamity().pointBlankShotDuration = 18;
+            
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)

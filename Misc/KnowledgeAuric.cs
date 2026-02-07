@@ -25,7 +25,7 @@ namespace CalamityAmmo.Misc
         {
             Item.width = 20;
             Item.height = 20;
-            Item.rare = ModContent.RarityType<Violet>();
+            Item.rare = 15;//Violet
             Item.consumable = false;
         }
 

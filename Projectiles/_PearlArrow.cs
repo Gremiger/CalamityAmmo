@@ -24,6 +24,7 @@ using System.Drawing.Text;
 using System.Runtime.CompilerServices;
 using CalamityMod.Buffs.StatDebuffs;
 using CalamityMod.Projectiles.Typeless;
+using CalamityMod.Items.Accessories;
 
 namespace CalamityAmmo.Projectiles
 {
@@ -78,7 +79,6 @@ namespace CalamityAmmo.Projectiles
         public override bool PreKill(int timeLeft)
         {
             Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-
             return base.PreKill(timeLeft);
         }
         public override void OnKill(int timeLeft)
@@ -87,13 +87,9 @@ namespace CalamityAmmo.Projectiles
             {
                 float speedX = Projectile.velocity.X * Main.rand.NextFloat(.3f, .4f) + Main.rand.NextFloat(-8f, 8f);
                 float speedY = -Projectile.velocity.Y * Main.rand.NextFloat(.3f, .4f) + Main.rand.NextFloat(-8f, 8f);
-
-                if (Main.rand.NextBool(5))
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position.X + speedX, Projectile.position.Y + speedY, speedX * 0.2f, speedY *0.3f, ModContent.ProjectileType<PendantProjectile3>(), (int)(Projectile.damage * 0.5), 0f, Projectile.owner, 0f, 0f);
-                else if (Main.rand.Next(5)<2)
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position.X + speedX, Projectile.position.Y + speedY, speedX * 0.3f, speedY * 0.3f, ModContent.ProjectileType<PendantProjectile2>(), (int)(Projectile.damage * 0.3), 0f, Projectile.owner, 0f, 0f);
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position.X + speedX, Projectile.position.Y + speedY, speedX*0.3f, speedY * 0.3f, ModContent.ProjectileType<PendantProjectile1>(), (int)(Projectile.damage * 0.3), 0f, Projectile.owner, 0f, 0f);
-            }
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position.X + speedX, Projectile.position.Y + speedY, speedX*0.3f, speedY * 0.3f, ModContent.ProjectileType<PearlAuraShard>(), (int)(Projectile.damage * 0.2), 0f, Projectile.owner, 0f, 0f);
+				Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position.X + speedX, Projectile.position.Y + speedY, speedX * 0.3f, speedY * 0.3f, ModContent.ProjectileType<PearlAuraShard>(), (int)(Projectile.damage * 0.2), 0f, Projectile.owner, 0f, 0f);
+			}
             
         }
     }

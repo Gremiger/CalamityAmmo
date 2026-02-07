@@ -24,6 +24,8 @@ using CalamityMod.Projectiles.Ranged;
 using static CalamityAmmo.CAEUtils;
 using CalamityAmmo.Projectiles.Hardmode;
 using CalamityMod.Items.Placeables;
+using CalamityMod.Items.Placeables.FurnitureMonolith;
+using CalamityMod.Items.Placeables.Astral;
 
 namespace CalamityAmmo.Ammos.Hardmode
 {

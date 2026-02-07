@@ -51,8 +51,9 @@ namespace CalamityAmmo.Ammos.Hardmode
             recipe.AddIngredient(ItemID.ExplosivePowder,3);
             recipe.AddRecipeGroup(RecipeGroupID.Wood, 6);
             recipe.AddIngredient(ModContent.ItemType<ScoriaBar>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<CoreofHavoc>(), 1);
-            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.AddIngredient(ModContent.ItemType<EssenceofHavoc>(), 1);
+            recipe.AddIngredient(ItemID.Ectoplasm, 1);
+			recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
     }
@@ -69,7 +70,7 @@ namespace CalamityAmmo.Ammos.Hardmode
         {
             Projectile.width = 10;
             Projectile.height = 10;
-            Projectile.aiStyle = ProjectileID.WoodenArrowFriendly;
+            Projectile.aiStyle = ProjAIStyleID.Arrow;
             Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.DamageType = DamageClass.Ranged;
