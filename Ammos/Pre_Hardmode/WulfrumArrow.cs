@@ -27,12 +27,6 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Wulfrum Arrow");
-            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "钨钢箭");
-            // Tooltip.SetDefault("It's too heavy to make arrows at all. \n 'really ?' ");
-            //Tooltip.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "太重，太沉，钨钢根本不适合造箭。\n“真的吗？”");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вульфрум Стрела");
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Он слишком тяжелый, чтобы вообще делать стрелы. \n'правда?'");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
         public override void SetDefaults()

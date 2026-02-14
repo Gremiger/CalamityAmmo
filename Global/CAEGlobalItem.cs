@@ -61,9 +61,8 @@ namespace CalamityAmmo.Global
 				//tooltips.Insert(5, new TooltipLine(Mod, "GOPtooltip", Language.GetTextValue("Glove")));
 				//tooltips.Find(line => line.Name == "GOPtooltip");
 			}
-			if(item.useAmmo==AmmoID.Arrow&&modplayer.Arcane2)
+			if(item.useAmmo==AmmoID.Arrow&&modplayer.Arcane)
 			{
-				//tooltips.Add(new TooltipLine(Mod, "UseMana", Language.GetTextValue(Co)));
 				int index = tooltips.FindIndex(tip => tip.Name.StartsWith("Knockback"));
 				TooltipLine mana = new TooltipLine(Mod, "Mana", Language.GetTextValue("CommonItemTooltip.UsesMana", (int)(item.useTime/3f)));
 				tooltips.Insert(index+1,mana);
@@ -77,12 +76,9 @@ namespace CalamityAmmo.Global
 			{
 				if (Main.rand.NextBool(8))
 				{
-					
 					Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<FungiOrb>(), (int)(damage * 0.3f), 0f, player.whoAmI);
-					
 				}
 			}
-
 			return true;
 		}
 		public override void UpdateInventory(Item item, Player player)
@@ -121,15 +117,12 @@ namespace CalamityAmmo.Global
 		public override void PickAmmo(Item weapon, Item ammo, Player player, ref int type, ref float speed, ref StatModifier damage, ref float knockback)
 		{
 			CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
-			manaCost = (int)((weapon.useTime / 3f) * player.manaCost);
-			if (weapon.useAmmo == AmmoID.Arrow&&modplayer.Arcane2&&player.statMana>=manaCost) {
+			manaCost = (int)(weapon.useTime / 3f* player.manaCost);
+			if (weapon.useAmmo == AmmoID.Arrow&&modplayer.Arcane&&player.statMana>=manaCost) {
 				player.CheckMana(manaCost, true);
-				canArcaneTransform = true;
-				if(player.ItemAnimationActive)
-				player.manaRegenDelay = weapon.useTime*2+2;
+				if (player.ItemAnimationActive)player.manaRegenDelay = weapon.useTime * 2 + 1;
 			}
 		}
-
 	}
 	public class BossBag : GlobalItem
 	{

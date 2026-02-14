@@ -29,12 +29,6 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Pearl Arrow");
-            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "珍珠箭");
-            // Tooltip.SetDefault("Generate smaller fragments when destroyed ");
-            //Tooltip.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "被摧毁时生成更小的碎片");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Жемчужная стрела");
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Генерировать более мелкие фрагменты при уничтожении");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
         public override void SetDefaults()
@@ -54,10 +48,10 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(30);
-            recipe.AddIngredient(ItemID.WoodenArrow, 30);
+            Recipe recipe = CreateRecipe(50);
+            recipe.AddIngredient(ItemID.WoodenArrow, 50);
             recipe.AddIngredient(ModContent.ItemType<PearlShard>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<PrismShard>(), 3);
+            //recipe.AddIngredient(ModContent.ItemType<PrismShard>(), 3);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

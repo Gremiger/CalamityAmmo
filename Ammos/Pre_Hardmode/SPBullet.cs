@@ -40,7 +40,7 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
         }
         public override void SetDefaults()
         {
-            Item.damage = 9;
+            Item.damage = 5;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 8;
             Item.height = 8;
@@ -63,7 +63,6 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            //Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<Projectiles.WulfrumBoltRanged>(), damage, knockback, Main.myPlayer);
             return true;
         }
 

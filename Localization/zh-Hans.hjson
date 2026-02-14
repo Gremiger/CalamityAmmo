@@ -34,7 +34,7 @@ Mods: {
 			ArcaneArrow_Proj.DisplayName: 奥术箭
 			Crabulon_Spore.DisplayName: 菌生蟹的孢子
 			HealOrb.DisplayName: 治疗菇
-			RadioAura.DisplayName: Red Lightning Aura
+			RadioAura.DisplayName: 辐射光环
 			Shroomere.DisplayName: 蘑菇狙击枪
 			Spore1.DisplayName: 孢子云
 			Spore2.DisplayName: 孢子云
@@ -47,7 +47,7 @@ Mods: {
 			MirageArrow_Proj.DisplayName: 幻境箭
 			MirageArrow_Proj2.DisplayName: 幻境箭
 			SoulBullet_Proj.DisplayName: 幻魂子弹
-			Chengying_Fumo_Proj.DisplayName: Chengying's Fumo
+			Chengying_Fumo_Proj.DisplayName: cy毛绒玩具
 			_BloodBullet.DisplayName: 血弹
 			_DesertFeatherArrow.DisplayName: 荒漠羽箭
 			_PearlArrow.DisplayName: 珍珠箭
@@ -76,12 +76,12 @@ Mods: {
 			_Seed.DisplayName: 永恒种子
 			_WeakAstralArrow.DisplayName: 尘星箭
 			_WeakAstralBullet.DisplayName: 尘星弹
-			FakeSeaStar1.DisplayName: Aquatic Star
-			FakeSeaStar2.DisplayName: Brittle Star
+			FakeSeaStar1.DisplayName: 渊海灾星
+			FakeSeaStar2.DisplayName: 荒漠灾星
 			_ElementalArrow.DisplayName: 元素之箭
 			_ElementalBullet.DisplayName: 天体萝卜丝
 			_GoldenFeatherArrow.DisplayName: 金羽箭
-			_RedLightning.DisplayName: 孙红雷
+			_RedLightning.DisplayName: 赤红雷霆
 			HealingRain.DisplayName: 治疗之雨
 			HealingStarcloud.DisplayName: 治疗星云
 			LightningVortex.DisplayName: 星旋闪电
@@ -109,8 +109,8 @@ Mods: {
 			SandSnowman.DisplayName: 钻地导弹
 			Spike.DisplayName: 斯派克
 			SpikyBall.DisplayName: 沙刺球
-			ThePack_ClusterRocketI.DisplayName: 集束集束火箭
-			ThePack_ClusterRocketII.DisplayName: 集束二级集束火箭
+			ThePack_ClusterRocketI.DisplayName: 集束火箭
+			ThePack_ClusterRocketII.DisplayName: 集束二级火箭
 			ThePack_DryRocket.DisplayName: 集束干火箭
 			ThePack_HoneyRocket.DisplayName: 集束蜂蜜火箭
 			ThePack_LavaRocket.DisplayName: 集束熔岩火箭
@@ -135,7 +135,7 @@ Mods: {
 			ThePackLittle_RocketIV.DisplayName: 迷你集束火箭
 			ThePackLittle_WetRocket.DisplayName: 迷你集束火箭
 			_AstralFlame.DisplayName: 星瀚逐影焰
-			// Explode.DisplayName: Explode
+			Explode.DisplayName: 爆炸
 			// GrapeProj.DisplayName: Grape
 			// GrapeShot.DisplayName: Grape
 			Summon.VolcanicFireballRanged.DisplayName: 渊泉火球
@@ -143,13 +143,15 @@ Mods: {
 			_DazzlingAstralArrowNew.DisplayName: 炫星箭
 			DivineArrow_Proj.DisplayName: 圣晶石箭
 			DivineGeodeMeteor.DisplayName: 圣晶陨石
-			DivineGeodeMeteor2.DisplayName: Divine Geode Meteor2
-			// DivineBullet_Proj.DisplayName: Divine Bullet
-			DeathMarkRound.DisplayName: 死神马格南光束
+			DivineGeodeMeteor2.DisplayName: 圣晶陨石
+			DivineBullet_Proj.DisplayName: 圣晶石弹
+			DeathMarkRound.DisplayName: 死印光束
 			IceBomb.DisplayName: 寒冰炸弹
 			IceRain.DisplayName: 寒冰碎片
 			BrimstoneHellblast.DisplayName: 硫狱爆弹
 			ElectricStream.DisplayName: 电流
+			seaPrismShard.DisplayName: 海棱晶碎片
+			rottenBulletProj.DisplayName: 腐烂子弹
 		}
 
 		Items: {
@@ -157,14 +159,13 @@ Mods: {
 				DisplayName: 奥术箭袋
 				Tooltip:
 					'''
-					可以消耗魔力为箭矢附魔，造成额外伤害
-					魔力消耗取决于武器攻速
+					使箭矢伤害受魔力病影响
+					可以消耗魔力为箭矢附魔，造成额外的伤害
+					魔力充盈时，箭矢伤害更高
 					打开饰品可见性将把任何种类的箭矢替换为追踪的奥术箭
-					法力充盈时，奥术箭的伤害更高
-					如果患有魔力病，奥术箭的伤害减半
 					箭的速度大大提高
 					20%的几率不消耗箭
-					“魔法，能量。我的人民陷入其中不能自拔!”
+					“法师们用奥术强化箭矢，然后出售给猎人；后来猎人们自己学会了足够的魔法之后便能够自给自足。”
 					'''
 			}
 
@@ -208,8 +209,7 @@ Mods: {
 				Tooltip:
 					'''
 					未受伤时减少5点防御与1点生命再生，提升6%远程伤害与9%远程暴击率
-					受伤后给予5秒与菇共生buff，期间减少6%远程伤害与9%远程暴击，不再减少生存属性
-					死亡延续生命，生命成就死亡
+					这个效果在受伤后短暂反转
 					'''
 			}
 
@@ -234,7 +234,7 @@ Mods: {
 					按下“[KEY]”以激活或禁用幻菇中毒
 					一杆蘑菇狙击枪悬浮在你的头顶，狙杀进入射程的敌人
 					敌人将不那么容易瞄准你
-					“我怎么感觉我们的成员越来越少了？“
+					“怎么感觉我们的成员越来越少了？“
 					'''
 			}
 
@@ -243,7 +243,7 @@ Mods: {
 				Tooltip:
 					'''
 					按下“[KEY]”以激活或禁用幻菇中毒
-					“眼睛所见的，未必真实”
+					“亲眼所见的未必真实”
 					'''
 			}
 
@@ -320,11 +320,7 @@ Mods: {
 
 			HydrothermicArrow: {
 				DisplayName: 渊泉箭
-				Tooltip:
-					'''
-					击中敌人后释放渊泉爆炸
-					“以子之矛攻子之盾，就会产生......” 
-					'''
+				Tooltip: 击中敌人后释放渊泉爆炸
 			}
 
 			HydrothermicBullet: {
@@ -333,7 +329,6 @@ Mods: {
 					'''
 					击中敌人时在其脚下生成一座微型渊泉火山
 					微型渊泉火山会喷射火柱和渊泉火焰
-					“我的身体内部，可是一千四百度喔。”
 					'''
 			}
 
@@ -341,7 +336,7 @@ Mods: {
 				DisplayName: 汽油弹
 				Tooltip:
 					'''
-					造成涂油和着火了！
+					造成涂油和着火了！减益
 					“一点点火光，谁也烧不到！”
 					'''
 			}
@@ -353,7 +348,11 @@ Mods: {
 
 			WeakAstralArrow: {
 				DisplayName: 尘星箭
-				Tooltip: “蠕虫说，是的我有很多父亲”
+				Tooltip:
+					'''
+					力量还不够......
+					在击败被星辉瘟疫侵蚀的机械巨兽后，进化
+					'''
 			}
 
 			WeakAstralBullet: {
@@ -369,9 +368,9 @@ Mods: {
 				DisplayName: 天体萝卜
 				Tooltip:
 					'''
+					造成元素谐鸣减益
 					击中敌人会让后续同种弹幕获得100%伤害加成
 					此加成会在0.25秒内线性衰减至0
-					造成元素谐鸣减益
 					'''
 			}
 
@@ -386,7 +385,7 @@ Mods: {
 
 			MirageArrow: {
 				DisplayName: 幻境箭
-				Tooltip: “我给你留了（至少）两箭！”
+				Tooltip: “我给你留了两箭！”
 			}
 
 			SoulBullet: {
@@ -396,7 +395,12 @@ Mods: {
 
 			BloodBullet: {
 				DisplayName: 血弹
-				Tooltip: 有概率从敌人身上偷取生命
+				Tooltip:
+					'''
+					造成血液沸腾减益
+					造成伤害的20%转化为生命偷取
+					“那么代价是什么呢？”
+					'''
 			}
 
 			DesertFeatherArrow: {
@@ -416,38 +420,34 @@ Mods: {
 
 			PearlArrow: {
 				DisplayName: 珍珠箭
-				Tooltip: 被摧毁时生成更小的碎片
+				Tooltip: 在撞击时召唤珍珠碎片
 			}
 
 			PearlBullet: {
 				DisplayName: 珍珠子弹
-				Tooltip:
-					'''
-					可以穿透两个敌人
-					命中的敌人会被减速
-					'''
+				Tooltip: 使敌人披上一层平静的珍珠光泽，减缓它们的移动速度。
 			}
 
 			RottenBullet: {
 				DisplayName: 腐烂子弹
 				Tooltip:
 					'''
-					开火时射出一小片霰弹
-					“它还在蠕动，增殖，似乎永远也不会被耗尽”
+					造成大脑溃烂减益
+					斩杀敌人时向四周发射子弹
 					'''
 			}
 
 			SPBullet: {
 				DisplayName: 棱晶子弹
-				Tooltip: 破碎时释放一束洋流
+				Tooltip: 在撞击时产生海棱晶碎片
 			}
 
 			VictideArrow: {
 				DisplayName: 胜潮箭
 				Tooltip:
 					'''
-					在水下移动更快且伤害提升至1.4倍
-					“拿我的高压气瓶来”
+					在水下移动更快
+					击中敌人以掀起胜利之潮
 					'''
 			}
 
@@ -455,8 +455,8 @@ Mods: {
 				DisplayName: 胜潮子弹
 				Tooltip:
 					'''
-					在水下移动更快且伤害提升至2倍
-					“拿我的高压气瓶来”
+					在水下移动更快
+					击中敌人以掀起胜利之潮
 					'''
 			}
 
@@ -473,14 +473,14 @@ Mods: {
 				DisplayName: 废钢弹
 				Tooltip:
 					'''
-					激发出具有轻微追踪能力的钨钢光线，具有10点护甲穿透
+					发射具有轻微追踪能力的钨钢光线
 					“最后的波纹，小子”
 					'''
 			}
 
 			Chengying_Fumo: {
 				DisplayName: 精美毛绒玩具
-				Tooltip: 你要明白，我们不能用温柔去应对黑暗，要用火。
+				Tooltip: “你要明白，我们不能用温柔去应对黑暗，要用火。”
 				/* TooltipDay:
 					'''
 					A toast to all who sought to kill me! 
@@ -539,17 +539,13 @@ Mods: {
 				Tooltip:
 					'''
 					种蘑菇
-					没做完呢急啥
+					哈哈，做不完了
 					'''
 			}
 
 			PlaguenadeLauncher: {
 				DisplayName: 瘟疫蜜蜂掷弹筒
-				Tooltip:
-					'''
-					使用手榴弹作为弹药
-
-					'''
+				Tooltip: 使用手榴弹作为弹药
 			}
 
 			SandRocket: {
@@ -566,7 +562,7 @@ Mods: {
 				Tooltip:
 					'''
 					发射一个易碎的刺球
-					每攻击四次额外发射一小波沙暴
+					每攻击六次额外发射一小波沙暴
 					'''
 			}
 
@@ -576,7 +572,7 @@ Mods: {
 			}
 
 			Paper2: {
-				// DisplayName: Paper2
+				// DisplayName: Bamboo Paper
 				// Tooltip: ""
 			}
 
@@ -598,7 +594,7 @@ Mods: {
 				DisplayName: 圣晶石子弹
 				Tooltip:
 					'''
-					击中时引发更剧烈的圣火爆炸
+					击中时引发更加剧烈的圣火爆炸
 					“你是说‘圣火大爆炸’吗？”
 					'''
 			}
@@ -614,9 +610,8 @@ Mods: {
 				DisplayName: 元素之箭
 				Tooltip:
 					'''
-					每穿透一个敌人便提高10%伤害
-					依据此法获得的增伤最多生效4次
 					造成元素谐鸣减益
+					每穿透一个敌人便提高10%伤害，至多生效4次
 					'''
 			}
 
@@ -693,6 +688,11 @@ Mods: {
 					今天算你走运，虫......不，没什么，你听错了
 					'''
 			}
+
+			tideOfVictory: {
+				DisplayName: 胜利之潮
+				Description: 提升远程伤害、暴击率、防御、伤害减免、生命再生速度和移动能力
+			}
 		}
 
 		NPCs: {
@@ -736,8 +736,8 @@ Mods: {
 		selectLowLP: 自动索敌：生命值百分比最低的敌人
 		selectNearPlayer: 自动索敌：距离玩家最近的敌人
 		selectNearMouse: 自动索敌：距离鼠标位置最近的敌人
-		//selectLowDefense: Automatic Search: the enemy closest to the mouse position
-		//selectHighDef: Automatic Search: the enemy with the highest defense
+		selectLowDefense: 自动索敌：防御力最低的敌人
+		selectHighDef: 自动索敌：防御力最高的敌人
 		Homeless1: 让我想想，既然能见到我，那你玩的一定是射手吧！
 		Homeless2: 居然连一个房间也没有，你连最基本的npc监狱都不会造吗？真是弱诶。
 		Any1: 已经两分钟没有吃东西了，好饿啊...你有什么吃的吗？

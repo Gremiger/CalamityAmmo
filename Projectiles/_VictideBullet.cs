@@ -24,18 +24,18 @@ using System.Drawing.Text;
 using System.Runtime.CompilerServices;
 using CalamityMod.Buffs.StatDebuffs;
 using CalamityMod.Projectiles.Typeless;
+using CalamityAmmo.Misc;
 
 namespace CalamityAmmo.Projectiles
 {
     public class _VictideBullet : ModProjectile
     {
-        public override void SetStaticDefaults()
+		private bool hasLiquidBoost = false;
+		private int originalExtraUpdates = 0;
+		public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Victide Bullet");
-            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "胜潮弹");
             Main.projFrames[Projectile.type] = 1;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Победоносная пуля");
         }
         public override void SetDefaults()
         {
@@ -55,36 +55,41 @@ namespace CalamityAmmo.Projectiles
             Projectile.netImportant = true;
         }
         public override bool? CanCutTiles() => true;
-        public override void AI()
-        {
-            if (Projectile.wet)
-            {
-                Projectile.extraUpdates = 2;
-            }
-        }
-        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-        {
-            
-        }
-        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
-        {
-            if (Projectile.wet)
-            {
-				modifiers.ModifyHitInfo += (ref NPC.HitInfo hitInfo) => {
-                    hitInfo.Damage += (int)(hitInfo.Damage * 0.4f);
-				};
+		public override void AI()
+		{
+			if (Projectile.wet && !hasLiquidBoost)
+			{
+				Projectile.extraUpdates = originalExtraUpdates + 1;
+				hasLiquidBoost = true;
+
+				if (Main.rand.NextBool(3))
+				{
+					Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height,
+						DustID.Water, 0f, 0f, 100, default, 1f);
+					dust.velocity = Projectile.velocity * 0.5f;
+					dust.noGravity = true;
+				}
 			}
+			else if (!Projectile.wet && hasLiquidBoost)
+			{
+				Projectile.extraUpdates = originalExtraUpdates;
+				hasLiquidBoost = false;
+			}
+
+		}
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            Main.player[Projectile.owner].AddBuff(ModContent.BuffType<tideOfVictory>(), 120);
         }
         public override bool PreDraw(ref Color lightColor)
         {
             Projectile.rotation = (float)(Projectile.velocity.ToRotation() + Math.PI / 2);
-            return base.PreDraw(ref lightColor);
+            return true;
         }
         public override bool PreKill(int timeLeft)
         {
             Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-
-            return base.PreKill(timeLeft);
+            return true;
         }
 
     }

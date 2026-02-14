@@ -61,8 +61,36 @@ namespace CalamityAmmo.Projectiles
         public override bool? CanCutTiles() => true;
         public override void AI()
         {
+			// 计算箭尾位置（沿着速度反方向偏移）
+			Vector2 tailPosition;
 
-        }
+			if (Projectile.velocity != Vector2.Zero)
+			{
+				// 获取箭的速度方向
+				Vector2 direction = Vector2.Normalize(Projectile.velocity);
+
+				// 计算尾部偏移量（箭的长度一半，或者自定义值）
+				// 可以根据实际箭的大小调整这个值
+				float tailOffset = 10f;
+
+				// 计算尾部位置（从中心向速度反方向偏移）
+				tailPosition = Projectile.Center - direction * tailOffset;
+			}
+			else
+			{
+				// 如果没有速度，使用当前位置
+				tailPosition = Projectile.position;
+			}
+
+			// 在尾部生成粒子
+			/*for (int i = 0; i < 4; i++)
+			{
+				int num = Dust.NewDust(tailPosition, base.Projectile.width, base.Projectile.height, DustID.BlueFlare, 0f, 0f, 100, default(Color), 0.6f);
+				Main.dust[num].noGravity = true;
+				Main.dust[num].velocity *= 0.5f;
+				Main.dust[num].velocity += base.Projectile.velocity * 0.1f;
+			}*/
+		}
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             
@@ -81,17 +109,58 @@ namespace CalamityAmmo.Projectiles
             Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
             return base.PreKill(timeLeft);
         }
-        public override void OnKill(int timeLeft)
-        {
-            if (Projectile.owner == Main.myPlayer)
-            {
-                float speedX = Projectile.velocity.X * Main.rand.NextFloat(.3f, .4f) + Main.rand.NextFloat(-8f, 8f);
-                float speedY = -Projectile.velocity.Y * Main.rand.NextFloat(.3f, .4f) + Main.rand.NextFloat(-8f, 8f);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position.X + speedX, Projectile.position.Y + speedY, speedX*0.3f, speedY * 0.3f, ModContent.ProjectileType<PearlAuraShard>(), (int)(Projectile.damage * 0.2), 0f, Projectile.owner, 0f, 0f);
-				Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position.X + speedX, Projectile.position.Y + speedY, speedX * 0.3f, speedY * 0.3f, ModContent.ProjectileType<PearlAuraShard>(), (int)(Projectile.damage * 0.2), 0f, Projectile.owner, 0f, 0f);
+		public override void OnKill(int timeLeft)
+		{
+			if (Projectile.owner == Main.myPlayer)
+			{
+				// 获取原始弹幕速度的方向
+				Vector2 originalDirection = Projectile.velocity;
+
+				originalDirection.Normalize();
+
+				// 计算反方向（向外飞的方向）
+				Vector2 outwardDirection = -originalDirection;
+
+				// 随机选择是顺时针还是逆时针旋转
+				bool clockwise = Main.rand.NextBool();
+
+				// 随机角度范围：30度到50度
+				float randomAngle = MathHelper.ToRadians(Main.rand.NextFloat(30f, 45f));
+
+				// 根据方向应用旋转
+				if (clockwise)
+				{
+					randomAngle = -randomAngle; // 逆时针
+				}
+
+				// 应用旋转
+				Vector2 finalDirection = outwardDirection.RotatedBy(randomAngle);
+				finalDirection.Normalize();
+
+				// 设置向外飞行的速度
+				float outwardSpeed = 8f;
+				Vector2 outwardVelocity = finalDirection * outwardSpeed;
+
+				// 在爆炸点位置生成弹幕
+				Vector2 spawnPosition = Projectile.position-originalDirection*16f;
+
+
+				// 生成弹幕
+				Projectile.NewProjectile(
+					Projectile.GetSource_FromThis(),
+					spawnPosition.X,
+					spawnPosition.Y,
+					outwardVelocity.X,
+					outwardVelocity.Y,
+					ModContent.ProjectileType<PearlAuraShard>(),
+					(int)(Projectile.damage * 0.4),
+					0f,
+					Projectile.owner,
+					0f,
+					0f
+				);
 			}
-            
-        }
-    }
+		}
+	}
 }
 

@@ -31,15 +31,16 @@ namespace CalamityAmmo.Projectiles
             Projectile.ignoreWater = false;
             Projectile.extraUpdates = 3;
             Projectile.alpha = 255;
-        }
+           // Projectile.aiStyle = ProjAIStyleID.Stream;
+
+		}
         public override bool? CanCutTiles()
         {
             return true;
         }
         public override void AI()
         {
-
-             Projectile.velocity.Y += 0.4f;
+            Projectile.velocity.Y += 0.2f;
             Lighting.AddLight((int)(Projectile.Center.X / 16f), (int)(Projectile.Center.Y / 16f), 0.15f, 0.15f, 0.5f);
             int num21 = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 172, Projectile.velocity.X, Projectile.velocity.Y, 100, default(Color), 1.4f);
             Main.dust[num21].noGravity = true;

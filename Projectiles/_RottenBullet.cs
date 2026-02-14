@@ -22,13 +22,13 @@ namespace CalamityAmmo.Projectiles
 		public override void SetDefaults()
 		{
 			Projectile.width = 4;
-			Projectile.height = 14;
+			Projectile.height = 4;
 			Projectile.friendly = true;
 			Projectile.hostile = false;
 			Projectile.DamageType = DamageClass.Ranged;
 			Projectile.penetrate = 1;
 			Projectile.timeLeft = 300;
-			Projectile.alpha = 255;
+			Projectile.alpha = 0;
 			Projectile.tileCollide = true;
 			Projectile.ignoreWater = false;
 			Projectile.usesLocalNPCImmunity = true;//NPC是不是按照弹幕ID来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则八个都能击中，不骗伤，原版夜明弹的反骗伤就是如此）
@@ -40,25 +40,11 @@ namespace CalamityAmmo.Projectiles
 		public override bool? CanCutTiles() => true;
 		public override void AI()
 		{
-			float numberProjectiles = 5 + Main.rand.Next(4);
-			for (int i = 0; i < numberProjectiles; i++)
-			{
-				Projectile.ai[0]++;
-				Vector2 perturbedSpeed = Projectile.velocity.RotatedByRandom(MathHelper.ToRadians(60));
-				float scale = 1f - (Main.rand.NextFloat() * .3f);
-				perturbedSpeed = perturbedSpeed * scale;
-				if (Projectile.ai[0] >= 24)
-				{
-					Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, 5), perturbedSpeed, ModContent.ProjectileType<_RottenBullet2>(), (int)(Projectile.damage / (numberProjectiles - 2)), Projectile.knockBack, Main.myPlayer);
-					Projectile.penetrate = 0;
-				}
-			}
+
 		}
-
-
 		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			target.AddBuff(ModContent.BuffType<BrainRot>(), 45);
+			target.AddBuff(ModContent.BuffType<BrainRot>(), 240);
 		}
 		public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
 		{

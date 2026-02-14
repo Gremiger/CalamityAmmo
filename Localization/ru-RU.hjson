@@ -150,6 +150,8 @@ Mods: {
 			// IceRain.DisplayName: Ice Rain
 			// BrimstoneHellblast.DisplayName: Brimstone Hellblast
 			// ElectricStream.DisplayName: Electricity Surge
+			// seaPrismShard.DisplayName: Sea Prism Shard
+			// rottenBulletProj.DisplayName: Rotten Bullet
 		}
 
 		Items: {
@@ -575,9 +577,8 @@ Mods: {
 				// DisplayName: Elemental Arrow
 				/* Tooltip:
 					'''
-					Each penetrated enemy will increases arrow damage by 10%
-					The damage increase obtained according to above method can be effective up to 4 times.
-					Causes Elemental Mix
+					Inficts Elemental Mix
+					Each penetrated enemy will increases damage by 10%, up to 4 times
 					''' */
 			}
 
@@ -654,6 +655,11 @@ Mods: {
 					Тебе сегодня повезло, червь... Нет, ничего, ты ослышался.
 					'''
 			}
+
+			tideOfVictory: {
+				// DisplayName: Tide of Victory
+				// Description: Increases ranged damage, crit chance, defense, mobility, damage reduction, and life regeneration
+			}
 		}
 
 		NPCs: {
@@ -697,8 +703,8 @@ Mods: {
 		// selectLowLP: Automatic search: Enemy with the lowest life precent
 		// selectNearPlayer: Automatic Search: the enemy closest to the player
 		// selectNearMouse: Automatic Search: the enemy closest to the mouse position
-		//selectLowDefense: Automatic Search: the enemy closest to the mouse position
-		//selectHighDef: Automatic Search: the enemy with the highest defense
+		// selectLowDefense: Automatic Search: the enemy closest to the mouse position
+		// selectHighDef: Automatic Search: the enemy with the highest defense
 		Homeless1: Хм... если ты меня видишь, значит, ты стрелок!
 		Homeless2: Не могу поверить, что у тебя даже нет комнаты, разве ты не можешь построить обычную комнату для НПС?
 		Any1: Почему я ношу с собой этот топор? Потому что раньше это был божественный боевой топор 44 урона!

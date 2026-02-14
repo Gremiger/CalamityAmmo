@@ -12,9 +12,6 @@ namespace CalamityAmmo.Projectiles
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Blood Bullet");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "血弹");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Кровавая пуля");
 			Main.projFrames[Projectile.type] = 1;
 			ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
 		}
@@ -40,19 +37,30 @@ namespace CalamityAmmo.Projectiles
 		public override bool? CanCutTiles() => true;
 		public override void AI()
 		{
-
+			Player p = Main.player[Projectile.owner];
+			Main.NewText("lifeSteal="+p.lifeSteal);
 		}
 
 
 		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			if (target.type != NPCID.TargetDummy && Main.myPlayer == Projectile.owner && Main.rand.NextBool(5))
+			Player p = Main.player[Projectile.owner];
+			float healamount = Projectile.damage * 0.2f;
+			if (target.type != NPCID.TargetDummy && Main.myPlayer == Projectile.owner )
 			{
-				int proj = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center.X, Projectile.Center.Y, 0, 0, ProjectileID.VampireHeal, 0, 0, Projectile.owner, Projectile.owner, 1);
-				Main.projectile[proj].timeLeft = 300;
-				Main.projectile[proj].netUpdate = true;
+				if(p.lifeSteal > 0)
+				{
+					p.lifeSteal -= healamount;
+					int proj = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center.X, Projectile.Center.Y, 0, 0, ProjectileID.VampireHeal, 0, 0, Projectile.owner, Projectile.owner, healamount);
+					Main.projectile[proj].timeLeft = 300;
+					Main.projectile[proj].netUpdate = true;
+				}
+				else
+				{
+					p.AddBuff(ModContent.BuffType<BurningBlood>(), 300);
+				}
 			}
-			target.AddBuff(ModContent.BuffType<BurningBlood>(), 45);
+			target.AddBuff(ModContent.BuffType<BurningBlood>(), 300);
 		}
 		public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
 		{
@@ -61,7 +69,7 @@ namespace CalamityAmmo.Projectiles
 		public override bool PreDraw(ref Color lightColor)
 		{
 			Projectile.rotation = (float)(Projectile.velocity.ToRotation() + Math.PI / 2);
-			return base.PreDraw(ref lightColor);
+			return true;
 		}
 
 		public override bool PreKill(int timeLeft)

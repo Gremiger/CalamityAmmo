@@ -1,29 +1,31 @@
-﻿using System;
-using System.IO;
+﻿using CalamityAmmo.Misc;
+using CalamityAmmo.Projectiles;
+using CalamityMod.Buffs.StatDebuffs;
+using CalamityMod.Items.Materials;
+using CalamityMod.Projectiles.Magic;
+using CalamityMod.Projectiles.Typeless;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
+using ReLogic.Graphics;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing.Text;
+using System.IO;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
 using Terraria;
-using Terraria.UI;
 using Terraria.DataStructures;
+using Terraria.GameContent;
 using Terraria.GameContent.UI;
 using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
 using Terraria.ID;
 using Terraria.Localization;
-using System.Text;
 using Terraria.ModLoader;
-using ReLogic.Graphics;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System.Linq;
-using ReLogic.Content;
-using Terraria.GameContent;
-using CalamityMod.Projectiles.Magic;
-using CalamityMod.Items.Materials;
-using CalamityAmmo.Projectiles;
-using System.Drawing.Text;
-using System.Runtime.CompilerServices;
-using CalamityMod.Buffs.StatDebuffs;
-using CalamityMod.Projectiles.Typeless;
+using Terraria.UI;
 
 namespace CalamityAmmo.Projectiles
 {
@@ -31,16 +33,15 @@ namespace CalamityAmmo.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Victide Arrow");
-            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "胜潮箭");
             Main.projFrames[Projectile.type] = 1;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Победоносная стрела");
         }
-        public override void SetDefaults()
+		private bool hasLiquidBoost = false;
+		private int originalExtraUpdates = 0;
+		public override void SetDefaults()
         {
-            Projectile.width = 14;
-            Projectile.height = 14;
+            Projectile.width = 8;
+            Projectile.height = 8;
             Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.DamageType = DamageClass.Ranged;
@@ -54,28 +55,40 @@ namespace CalamityAmmo.Projectiles
             Projectile.idStaticNPCHitCooldown = 15;
             Projectile.netImportant = true;
             Projectile.arrow = true;
-            Projectile.aiStyle = 1;
-        }
+            Projectile.aiStyle = ProjAIStyleID.Arrow;
+			originalExtraUpdates = Projectile.extraUpdates;
+		}
         public override bool? CanCutTiles() => true;
-        public override void AI()
+		
+		public override void AI()
         {
-            if (Projectile.wet)
-            {
-                Projectile.extraUpdates = 2;
-            }
-                
-        }
+			if (Projectile.wet && !hasLiquidBoost)
+			{
+				// 进入液体：增加extraUpdates
+				Projectile.extraUpdates = originalExtraUpdates + 1;
+				hasLiquidBoost = true;
+
+				// 可以添加视觉效果
+				if (Main.rand.NextBool(3))
+				{
+					Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height,
+						DustID.Water, 0f, 0f, 100, default, 1f);
+					dust.velocity = Projectile.velocity * 0.5f;
+					dust.noGravity = true;
+				}
+			}
+			else if (!Projectile.wet && hasLiquidBoost)
+			{
+				// 离开液体：恢复原始值
+				Projectile.extraUpdates = originalExtraUpdates;
+				hasLiquidBoost = false;
+			}
+
+		}
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-       
-        }
-        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
-        {
-            if (Projectile.wet)
-            {
-                modifiers.FinalDamage.Base += Projectile.damage * 0.4f;
-            }
-        }
+			Main.player[Projectile.owner].AddBuff(ModContent.BuffType<tideOfVictory>(), 120);
+		}
         public override bool PreDraw(ref Color lightColor)
         {
             Projectile.rotation = (float)(Projectile.velocity.ToRotation() + Math.PI / 2);

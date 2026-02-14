@@ -4,12 +4,10 @@ using CalamityAmmo.Projectiles.GenerateByAccessories;
 using CalamityAmmo.Rockets;
 using CalamityMod;
 using CalamityMod.Buffs.DamageOverTime;
-using CalamityMod.Items.Weapons.Ranged;
 using CalamityMod.Projectiles.Ranged;
 using CalamityMod.Projectiles.Rogue;
 using CalamityMod.Projectiles.Typeless;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
@@ -69,12 +67,12 @@ namespace CalamityAmmo.Global
 			}
 			return true;
 		}
-		
+
 		public override void AI(Projectile projectile)
 		{
 			Player player = Main.player[projectile.owner];
 			CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
-			
+
 			if (modplayer.Radio && player.heldProj != projectile.whoAmI)
 			{
 				foreach (var proj in Main.projectile)
@@ -160,45 +158,52 @@ namespace CalamityAmmo.Global
 					Projectile.NewProjectile(projectile.GetSource_FromThis(), projectile.Center, projectile.velocity, ModContent.ProjectileType<TeslaAura>(), (int)(projectile.damage * 0.2f), 0f, player.whoAmI);
 				}
 			}
-			if (modplayer.Arcane2 && (projectile.arrow //|| projectile.type == ModContent.ProjectileType<MirageArrow_Proj>()
-				|| projectile.type == ModContent.ProjectileType<MirageArrow_Proj2>())
+			if((projectile.arrow || projectile.type == ModContent.ProjectileType<MirageArrow_Proj2>())
 				&& projectile.type != ModContent.ProjectileType<ArcaneArrow_Proj>()
-				&& projectile.type != 631)
+				&& projectile.type != ProjectileID.PhantasmArrow)
 			{
 				if (player.CheckMana(CAEGlobalItem.manaCost))
 				{
-					projectile.penetrate = 0;
-					projectile.active = false;
-					int damage = projectile.damage;
-					if (player.statMana / (float)player.statManaMax2 >= 0.75f)
+					if (modplayer.Arcane)
 					{
-						damage += (int)player.GetDamage<RangedDamageClass>().ApplyTo(15f);
+						int damage = projectile.damage;
+						if (player.statMana / (float)player.statManaMax2 >= 0.75f)
+						{
+							damage += (int)player.GetDamage<RangedDamageClass>().ApplyTo(15f);
+						}
+						else if (player.statMana / (float)player.statManaMax2 >= 0.5f)
+						{
+							damage += (int)player.GetDamage<RangedDamageClass>().ApplyTo(10f);
+						}
+						else if (player.statMana / (float)player.statManaMax2 >= 0.25f)
+						{
+							damage += (int)player.GetDamage<RangedDamageClass>().ApplyTo(5f);
+						}
+						if (player.HasBuff(BuffID.ManaSickness))
+						{
+							damage /= 2;
+						}
+						projectile.damage = damage;
+						projectile.netUpdate = true;
+						if (modplayer.Arcane2)
+						{
+							projectile.penetrate = 0;
+							projectile.active = false;
+							Projectile proj = Projectile.NewProjectileDirect(projectile.GetSource_FromThis(), projectile.Center, projectile.velocity, ModContent.ProjectileType<ArcaneArrow_Proj>(), damage, projectile.knockBack, player.whoAmI);
+							proj.CritChance = (int)player.GetCritChance<RangedDamageClass>();
+							proj.netImportant = true;
+						}
 					}
-					else if (player.statMana / (float)player.statManaMax2 >= 0.5f)
-					{
-						damage += (int)player.GetDamage<RangedDamageClass>().ApplyTo(10f);
-					}
-					else if (player.statMana / (float)player.statManaMax2 >= 0.25f)
-					{
-						damage += (int)player.GetDamage<RangedDamageClass>().ApplyTo(5f);
-					}
-					if (player.HasBuff(BuffID.ManaSickness))
-					{
-						damage /= 2;
-					}
-					//Main.NewText((float)player.statMana / (float)player.statManaMax2);
-					Projectile proj = Projectile.NewProjectileDirect(projectile.GetSource_FromThis(), projectile.Center, projectile.velocity, ModContent.ProjectileType<ArcaneArrow_Proj>(), damage, projectile.knockBack, player.whoAmI);
-					proj.CritChance = (int)player.GetCritChance<RangedDamageClass>();
-					proj.netImportant = true;
 				}
+				//Main.NewText((float)player.statMana / (float)player.statManaMax2);
 			}
 			if (projectile.type == ModContent.ProjectileType<CalamityMod.Projectiles.Ranged.AuricBullet>()
 			&& player.controlUseItem)
 			{
-				if(Vector2.Distance(projectile.Center,player.Center)<=32f) 
+				if (Vector2.Distance(projectile.Center, player.Center) <= 32f)
 				{
-				projectile.Center=  player.HeldItem.width>=58f? player.Center + projectile.velocity.SafeNormalize(Vector2.One)
-				* player.HeldItem.width: player.Center + projectile.velocity.SafeNormalize(Vector2.One)*58f;
+					projectile.Center = player.HeldItem.width >= 58f ? player.Center + projectile.velocity.SafeNormalize(Vector2.One)
+					* player.HeldItem.width : player.Center + projectile.velocity.SafeNormalize(Vector2.One) * 58f;
 				}
 			}
 
@@ -312,12 +317,6 @@ namespace CalamityAmmo.Global
 		{
 			Player player = Main.player[projectile.owner];
 			CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
-			if (projectile.arrow && modplayer.Arcane)
-			{
-				//projectile.damage *= (int)(1.05f + player.HeldItem.useTime / 420f);
-				//modifiers.ModifyHitInfo += (ref NPC.HitInfo hitInfo) =>
-				//hitInfo.Damage *= (int)(1.05f + player.HeldItem.useTime / 420f);
-			}
 			if (projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI)
 			{
 				if (modplayer.icyCoil)

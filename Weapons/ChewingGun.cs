@@ -22,22 +22,22 @@ namespace CalamityAmmo.Weapons
 
 		public override void SetDefaults()
 		{
-			base.Item.damage = 16;
-			base.Item.DamageType = DamageClass.Ranged;
-			base.Item.width = 88;
-			base.Item.height = 30;
-			base.Item.useTime = 35;
-			base.Item.useAnimation = 35;
-			base.Item.useStyle = 5;
-			base.Item.noMelee = true;
-			base.Item.knockBack = 0f;
-			base.Item.value = Item.sellPrice(0, 0, 0, 20);
-			base.Item.rare = ItemRarityID.Yellow;
-			base.Item.UseSound = SoundID.NPCHit1;
-			base.Item.autoReuse = true;
-			base.Item.shoot = ProjectileID.LostSoulFriendly;
-			base.Item.shootSpeed = 12f;
-			base.Item.useAmmo = AmmoID.Bullet;
+			Item.damage = 16;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 88;
+			Item.height = 30;
+			Item.useTime = 35;
+			Item.useAnimation = 35;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 0f;
+			Item.value = Item.sellPrice(0, 0, 0, 20);
+			Item.rare = ItemRarityID.Yellow;
+			Item.UseSound = SoundID.NPCHit1;
+			Item.autoReuse = true;
+			Item.shoot = ProjectileID.LostSoulFriendly;
+			Item.shootSpeed = 12f;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 		public override void AddRecipes()
 		{
@@ -50,7 +50,7 @@ namespace CalamityAmmo.Weapons
 		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
 
-			int proj = Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ModContent.ProjectileType<StcikyChewingGum>(), damage+1, knockback, player.whoAmI, 2f, 0f);
+			int proj = Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ModContent.ProjectileType<StcikyChewingGum>(), damage + 1, knockback, player.whoAmI, 2f, 0f);
 			//Main.projectile[proj].extraUpdates += 1;
 			Main.projectile[proj].velocity.Y += 0.35f;
 			return false;

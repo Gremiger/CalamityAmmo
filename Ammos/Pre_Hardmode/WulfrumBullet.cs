@@ -27,14 +27,8 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Wulfrum Scrap Bullet");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "废钢弹");
-            // Tooltip.SetDefault("Radiate out wulfrum energy beam with slight tracking ability. The beam has 10 base armor penetration  \n Last hamon , son.");
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "激发出具有轻微追踪能力的钨钢光线，光线具有10点护甲穿透\n最后的波纹，小子");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вульфрумская пуля из металлолома");
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Излучайте энергетический луч вульфрума с небольшой способностью отслеживания. \nЛуч имеет базовое пробивание брони 10 \n Последний хамон, сынок.");
-            Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
-        }
+			Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
+		}
         public override void SetDefaults()
         {
             Item.damage = 9;
@@ -52,16 +46,11 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(100);
+            Recipe recipe = CreateRecipe(200);
             recipe.AddIngredient(ModContent.ItemType<EnergyCore>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<WulfrumMetalScrap>(), 5);
+            recipe.AddIngredient(ModContent.ItemType<WulfrumMetalScrap>(), 10);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
-        }
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-        {
-            //Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<Projectiles.WulfrumBoltRanged>(), damage, knockback, Main.myPlayer);
-            return true;
         }
     }
 }

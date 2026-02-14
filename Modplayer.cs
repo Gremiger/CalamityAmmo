@@ -56,6 +56,7 @@ namespace CalamityAmmo
 		public bool electricCoil;
 		public bool autoCoil;
 		public int autoSelectMode;
+		public bool victide;
 		public bool Mycelium
 		{
 			get;
@@ -198,12 +199,27 @@ namespace CalamityAmmo
 			{
 				Player.GetDamage<RangedDamageClass>() *= 1.07f + Player.HeldItem.useTime / 480f;
 			}
+			if(victide)
+			{
+				Player.GetDamage(DamageClass.Ranged).Flat += 1f;
+				Player.GetCritChance(DamageClass.Ranged) += 1f;
+				Player.endurance += 0.01f;
+				Player.GetKnockback(DamageClass.Ranged).Flat += 1f;
+				Player.statDefense += 1;
+				Player.jumpSpeedBoost += 1f;
+				Player.maxFallSpeed += 1f;
+				Player.moveSpeed += 0.01f;
+				Player.maxRunSpeed += 0.01f;
+				Player.lifeRegen += 2;
+				Player.runAcceleration += 0.01f;
+				Player.GetAttackSpeed(DamageClass.Ranged) += 0.01f;
+			}
 		}
 
 		public override void ResetEffects()
 		{
-			this.Stars = false;
-			this.Aimed = false;
+			Stars = false;
+			Aimed = false;
 			Zip = false;
 			Coil = false;
 			Coil2 = false;
@@ -225,11 +241,12 @@ namespace CalamityAmmo
 			electricCoil = false;
 			hotCoil = false;
 			icyCoil = false;
+			victide = false;
 		}
 		public override void UpdateDead()
 		{
-			this.Stars = false;
-			this.Aimed = false;
+			Stars = false;
+			Aimed = false;
 			Zip = false;
 			Coil = false;
 			Coil2 = false;
@@ -247,6 +264,7 @@ namespace CalamityAmmo
 			LowATKspeed = false;
 			Grape = false;
 			Odd2 = false;
+			victide = false;
 		}
 		public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
 		{
@@ -291,10 +309,7 @@ namespace CalamityAmmo
 		}
 		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			/*if (Evil)
-			{
-				target.AddBuff(ModContent.BuffType<MarkedforDeath>(), 150);
-			}*/
+
 		}
 		public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Item, consider using OnHitNPC instead */
 		{

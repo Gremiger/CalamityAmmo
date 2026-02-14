@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CalamityMod;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -13,15 +14,7 @@ namespace CalamityAmmo.Accessories
 
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Arcane Quiver");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "奥术箭袋");
-			/* Tooltip.SetDefault("Allows you consume mana to enchant arrows and increase damage when holding a bow or repeater, \n" +
-                "Mana usage and damage scale are based on usetime of the weapon\n" +
-                "Mana Sickness also reduces player's ranged damage\n" +
-                "greatly increases arrow speed\n20% chance to not consume arrows\n" +
-                "Energy, power. My people are addicted to it!"); */
-			//Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese),
-			//"使你的箭矢在飞行轨迹上留下无害的紫色奥术粒子" ) ;
+			Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()
@@ -40,6 +33,7 @@ namespace CalamityAmmo.Accessories
 			{
 				modplayer.Arcane2 = true;
 			}
+			modplayer.Arcane = true;
 			player.magicQuiver = true;
 		}
 		public override void AddRecipes()
@@ -80,7 +74,7 @@ namespace CalamityAmmo.Accessories
 			Projectile.DamageType = DamageClass.Ranged;
 			Projectile.penetrate = 1;
 			Projectile.timeLeft = 360;
-			Projectile.light = 0f;
+			Projectile.light = 0.5f;
 			Projectile.extraUpdates = 0;
 			Projectile.arrow = true;
 			Projectile.alpha = 255;
@@ -109,7 +103,7 @@ namespace CalamityAmmo.Accessories
 			Projectile.ai[0]++;
 			Projectile.rotation = Utils.ToRotation(Projectile.velocity) + MathHelper.ToRadians(90f);
 			Projectile.scale = 0.8f;
-			//CalamityUtils.HomeInOnNPC(Projectile, !Projectile.tileCollide, 400f, Projectile.velocity.Length(), 5f);
+			CalamityUtils.HomeInOnNPC(Projectile, !Projectile.tileCollide, 300f, Projectile.velocity.Length()+0.325f, 12f);
 			if(Projectile.ai[0] <= 10) { if (Projectile.alpha > 0) Projectile.alpha -= 25; }
 			if (Projectile.ai[0] >= 150)
 			{
@@ -117,6 +111,7 @@ namespace CalamityAmmo.Accessories
 				if (Projectile.alpha <= 255) Projectile.alpha += 2;
 				else Projectile.Kill();
 			}
+			if (Projectile.velocity.Length() <= 10f) Projectile.velocity *= 1.1f;
 			if (Main.rand.NextBool(2)&&Projectile.velocity.Length()>4.2f)
 			{
 				Dust num9 = Dust.NewDustPerfect(Projectile.Center,21);
@@ -136,9 +131,7 @@ namespace CalamityAmmo.Accessories
 			//CalamityUtils.DrawAfterimagesCentered(Projectile, ProjectileID.Sets.TrailingMode[Projectile.type], lightColor, 1, null, true);
 			return true;
 		}
-
-		[System.Obsolete]
-		public override void OnKill(int timeLeft)
+		public override void Kill(int timeLeft)
 		{
 			SoundEngine.PlaySound(SoundID.DD2_DarkMageAttack, Projectile.Center);
 		}

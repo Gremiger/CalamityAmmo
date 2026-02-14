@@ -1,11 +1,14 @@
 ﻿using CalamityAmmo.Accessories;
+using CalamityAmmo.Ammos.Pre_Hardmode;
 using CalamityAmmo.Misc;
 using CalamityAmmo.Projectiles.Hardmode;
 using CalamityAmmo.Rockets;
 using CalamityMod;
 using CalamityMod.NPCs.Crabulon;
 using CalamityMod.NPCs.DesertScourge;
+using CalamityMod.NPCs.HiveMind;
 using CalamityMod.NPCs.NormalNPCs;
+using CalamityMod.NPCs.Perforator;
 using CalamityMod.Projectiles.Magic;
 using CalamityMod.Projectiles.Melee;
 using CalamityMod.Projectiles.Rogue;
@@ -29,9 +32,8 @@ namespace CalamityAmmo
 		public float elementaldoublemax = 16f;
 		public override void AI(NPC npc)
 		{
-			//Main.NewText("TransformerCoil.HitNPC="+TransformerCoil.HitNPC);
 			if (elementaldouble > 0) elementaldouble--;
-			if(!npc.active||npc.life <= 0||npc==null)
+			if (!npc.active || npc.life <= 0 || npc == null)
 			{
 				TransformerCoil.HitNPC.Remove(npc.whoAmI);
 			}
@@ -123,7 +125,6 @@ namespace CalamityAmmo
 				int proj = Projectile.NewProjectile(npc.GetSource_FromAI(), spawnPos, npc.velocity * 8, ModContent.ProjectileType<_Flower>(), projectile.damage, projectile.knockBack, Main.myPlayer);
 				Main.projectile[proj].netUpdate = true;
 			}
-
 		}
 	}
 }
@@ -157,6 +158,17 @@ public class NPCLoot : GlobalNPC
 		if (npc.type == ModContent.NPCType<DesertNuisanceHead>())
 		{
 			npcLoot.Add(ModContent.ItemType<SandWorm>(), new Fraction(5, 100));
+		}
+		if (npc.type == NPCType<PerforatorHive>())
+		{
+			/*LeadingConditionRule notExpertRule = new(new Conditions.NotExpert());
+			notExpertRule.OnSuccess(ItemDropRule.Common(ItemType<BloodBullet>(), 1,250,999));
+			npcLoot.Add(notExpertRule);*/
+			npcLoot.Add(ItemType<BloodBullet>(), 1, 500, 999);
+		}
+		if (npc.type == NPCType<HiveMind>())
+		{
+			npcLoot.Add(ItemType<RottenBullet>(), 1, 500, 999);
 		}
 		if (npc.type == NPCID.QueenBee)
 		{

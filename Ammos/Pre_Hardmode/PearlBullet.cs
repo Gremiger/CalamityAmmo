@@ -29,17 +29,11 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Pearl Bullet");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "珍珠子弹");
-            // Tooltip.SetDefault("Can penetrate two enemies\nWhen hitting the enemies, slow them down");
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "可以穿透两个敌人\n命中的敌人会被减速");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Жемчужная пуля");
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Может проникнуть сквозь двух врагов\nПри ударе по врагам замедляет их");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
         public override void SetDefaults()
         {
-            Item.damage = 8;
+            Item.damage = 7;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 8;
             Item.height = 8;
@@ -62,7 +56,6 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            //Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<Projectiles.WulfrumBoltRanged>(), damage, knockback, Main.myPlayer);
             return true;
         }
 
