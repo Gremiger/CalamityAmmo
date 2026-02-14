@@ -1,6 +1,6 @@
 displayName = Calamity Ranger Expansion
 author = 承影_chengying & Айри Гуль
-version = 1.2.1.8
+version = 1.2.1.9
 hideCode = true
 hideResources = true
 modReferences = CalamityMod@2.1

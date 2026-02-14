@@ -38,7 +38,7 @@ namespace CalamityAmmo.Projectiles
 		public override void AI()
 		{
 			Player p = Main.player[Projectile.owner];
-			Main.NewText("lifeSteal="+p.lifeSteal);
+			//Main.NewText("lifeSteal="+p.lifeSteal);
 		}
 
 
