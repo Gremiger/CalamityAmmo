@@ -158,7 +158,7 @@ namespace CalamityAmmo.Global
 					Projectile.NewProjectile(projectile.GetSource_FromThis(), projectile.Center, projectile.velocity, ModContent.ProjectileType<TeslaAura>(), (int)(projectile.damage * 0.2f), 0f, player.whoAmI);
 				}
 			}
-			if((projectile.arrow || projectile.type == ModContent.ProjectileType<MirageArrow_Proj2>())
+			if ((projectile.arrow || projectile.type == ModContent.ProjectileType<MirageArrow_Proj2>())
 				&& projectile.type != ModContent.ProjectileType<ArcaneArrow_Proj>()
 				&& projectile.type != ProjectileID.PhantasmArrow)
 			{
@@ -234,10 +234,10 @@ namespace CalamityAmmo.Global
 							Vector2 pos2 = target.Center + new Vector2(-sideLength, sideLength);
 							Vector2 pos3 = target.Center + new Vector2(-sideLength, -sideLength);
 							Vector2 pos4 = target.Center + new Vector2(sideLength, -sideLength);
-							Projectile.NewProjectileDirect(projectile.GetSource_FromThis(), pos1, -(target.Center - pos1).SafeNormalize(Vector2.Zero), ModContent.ProjectileType<IceBomb>(), projectile.damage / 3, projectile.knockBack, player.whoAmI);
-							Projectile.NewProjectileDirect(projectile.GetSource_FromThis(), pos2, -(target.Center - pos2).SafeNormalize(Vector2.Zero), ModContent.ProjectileType<IceBomb>(), projectile.damage / 3, projectile.knockBack, player.whoAmI);
-							Projectile.NewProjectileDirect(projectile.GetSource_FromThis(), pos3, -(target.Center - pos3).SafeNormalize(Vector2.Zero), ModContent.ProjectileType<IceBomb>(), projectile.damage / 3, projectile.knockBack, player.whoAmI);
-							Projectile.NewProjectileDirect(projectile.GetSource_FromThis(), pos4, -(target.Center - pos4).SafeNormalize(Vector2.Zero), ModContent.ProjectileType<IceBomb>(), projectile.damage / 3, projectile.knockBack, player.whoAmI);
+							Projectile.NewProjectileDirect(projectile.GetSource_FromThis(), pos1, -(target.Center - pos1).SafeNormalize(Vector2.Zero), ModContent.ProjectileType<IceBomb>(), (int)(projectile.damage * 0.4f), projectile.knockBack, player.whoAmI);
+							Projectile.NewProjectileDirect(projectile.GetSource_FromThis(), pos2, -(target.Center - pos2).SafeNormalize(Vector2.Zero), ModContent.ProjectileType<IceBomb>(), (int)(projectile.damage * 0.4f), projectile.knockBack, player.whoAmI);
+							Projectile.NewProjectileDirect(projectile.GetSource_FromThis(), pos3, -(target.Center - pos3).SafeNormalize(Vector2.Zero), ModContent.ProjectileType<IceBomb>(), (int)(projectile.damage * 0.4f), projectile.knockBack, player.whoAmI);
+							Projectile.NewProjectileDirect(projectile.GetSource_FromThis(), pos4, -(target.Center - pos4).SafeNormalize(Vector2.Zero), ModContent.ProjectileType<IceBomb>(), (int)(projectile.damage * 0.4f), projectile.knockBack, player.whoAmI);
 							modplayer.icyBombCD = 300;
 						}
 					}

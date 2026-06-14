@@ -17,8 +17,6 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Linq;
 using ReLogic.Content;
 using Terraria.GameContent;
-using CalamityMod.Projectiles.Magic;
-using CalamityMod.Items.Materials;
 using CalamityAmmo.Projectiles;
 using CalamityMod.Projectiles.Ranged;
 using CalamityAmmo.Projectiles.Post_MoonLord;
@@ -47,7 +45,10 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
 		{
 			Recipe recipe = CreateRecipe(333);
 			recipe.AddIngredient(ItemID.LunarBar, 1);
-			recipe.AddIngredient(ModContent.ItemType<GalacticaSingularity>(), 1);
+			recipe.AddIngredient(ItemID.FragmentSolar, 1);
+			recipe.AddIngredient(ItemID.FragmentVortex, 1);
+			recipe.AddIngredient(ItemID.FragmentNebula, 1);
+			recipe.AddIngredient(ItemID.FragmentStardust, 1);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.Register();
 		}

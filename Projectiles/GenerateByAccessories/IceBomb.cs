@@ -78,12 +78,12 @@ namespace CalamityAmmo.Projectiles.GenerateByAccessories
 				int totalProjectiles = 8;
 				float radians = 6.2831855f / (float)totalProjectiles;
 				int type = ModContent.ProjectileType<IceRain>();
-				int damage = (int)Math.Round((double)Projectile.damage * 0.34);
+				int damage = (int)Math.Round(Projectile.damage * 0.34);
 				float velocity = 1f;
 				Vector2 spinningPoint=new(0f, -velocity);
 				for (int i = 0; i < totalProjectiles; i++)
 				{
-					Vector2 vector255 = Utils.RotatedBy(spinningPoint*1.1f, (double)(radians * (float)i), default(Vector2));
+					Vector2 vector255 = Utils.RotatedBy(spinningPoint*1.1f, (double)(radians * (float)i));
 					Projectile.NewProjectile(Projectile.GetSource_FromThis(null), Projectile.Center, vector255, type, damage, 0f, Projectile.owner, 1f, 0f, 0f);
 				}
 			}
@@ -100,9 +100,7 @@ namespace CalamityAmmo.Projectiles.GenerateByAccessories
 			}
 			if (Projectile.ai[0] >= 120f)
 			{
-				target.AddBuff(44, 180);
-				target.AddBuff(46, 90);
-				target.AddBuff(ModContent.BuffType<GlacialState>(), 60);
+				target.AddBuff(BuffID.Frostburn, 180);
 			}
 		}
 	}
@@ -197,8 +195,7 @@ namespace CalamityAmmo.Projectiles.GenerateByAccessories
 			}
 			if (Projectile.ai[0] >= 120f)
 			{
-				target.AddBuff(44, 120);
-				target.AddBuff(46, 60);
+				target.AddBuff(BuffID.Frostburn, 120);
 			}
 		}
 	}

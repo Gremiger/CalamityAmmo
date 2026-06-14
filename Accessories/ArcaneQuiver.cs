@@ -131,8 +131,9 @@ namespace CalamityAmmo.Accessories
 			//CalamityUtils.DrawAfterimagesCentered(Projectile, ProjectileID.Sets.TrailingMode[Projectile.type], lightColor, 1, null, true);
 			return true;
 		}
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
+			if(Projectile.owner==Main.myPlayer)
 			SoundEngine.PlaySound(SoundID.DD2_DarkMageAttack, Projectile.Center);
 		}
 	}
