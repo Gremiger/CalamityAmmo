@@ -131,7 +131,7 @@ namespace CalamityAmmo.Misc
 					dialogue.Add(Language.GetTextValue("Mods.CalamityAmmo.Any1"));
 					dialogue.Add(Language.GetTextValue("Mods.CalamityAmmo.Any2"));
 					dialogue.Add(Language.GetTextValue("Mods.CalamityAmmo.Any3"));
-					//dialogue.Add("想联机的话，承影粉丝群里有灾厄服务器哦，找我就行");
+					//dialogue.Add("If you want to play multiplayer, the Chengying fan group has a Calamity server, just come find me");
 					dialogue.Add(Language.GetTextValue("Mods.CalamityAmmo.Any4"));
 					if (Main.dayTime)
 					{
@@ -177,10 +177,10 @@ namespace CalamityAmmo.Misc
 		public override void DrawTownAttackSwing(ref Texture2D item, ref Rectangle itemFrame, ref int itemSize, ref float scale, ref Vector2 offset)
 		{
 			item = ModContent.Request<Texture2D>("CalamityAmmo/Misc/翡翠斧").Value;
-			//（注意，这里的Item是Texture2D形式，也就是说，只要有材质就够了）
+			//(Note: here Item is in Texture2D form, meaning as long as there's a texture, that's enough)
 			scale = 1f;
-			//贴图大小，和实际尺寸无关
-			//offset这个向量值是决定武器绘制在NPC的哪个位置，平时不用
+			//Texture size, unrelated to actual dimensions
+			//This offset vector value determines where on the NPC the weapon is drawn; not normally used
 		}
 		public override void TownNPCAttackSwing(ref int itemWidth, ref int itemHeight)
 		{
@@ -189,7 +189,7 @@ namespace CalamityAmmo.Misc
 		}
 		public override void SetChatButtons(ref string button, ref string button2)
 		{
-			//翻译“商店文本”
+			//Translate "shop text"
 			button = Language.GetTextValue("LegacyInterface.28");
 			//button2 = Language.GetTextValue("LegacyInterface.28");
 		}

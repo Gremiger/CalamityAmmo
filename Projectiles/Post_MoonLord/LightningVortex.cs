@@ -29,7 +29,7 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
         {
             // base.DisplayName.SetDefault("Lightning Vortex");
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вихрь молнии");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "星旋闪电");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Lightning Vortex");
             ProjectileID.Sets.TrailCacheLength[base.Projectile.type] = 10;
             ProjectileID.Sets.TrailingMode[base.Projectile.type] = 2;
         }

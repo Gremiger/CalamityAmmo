@@ -30,7 +30,7 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Red Lightning");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "孙红雷");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Sun Honglei"); // pun: the actor's given name means "Red Lightning"
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Красная Молния");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 20;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 1;

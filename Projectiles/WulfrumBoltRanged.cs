@@ -16,7 +16,7 @@ namespace CalamityAmmo.Projectiles
         {
             base.SetStaticDefaults();
             // DisplayName.SetDefault("Wulfrum Bolt");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "钨钢光束");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Wulfrum Bolt");
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "энергетический луч вульфрума");
         }
         public override void SetDefaults()

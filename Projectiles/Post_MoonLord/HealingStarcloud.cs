@@ -26,7 +26,7 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Healing Nebula");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "治疗星云");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Healing Nebula");
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Исцеляющее Туманность");
             Main.projFrames[Projectile.type] = 6;
         }
@@ -95,7 +95,7 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Healing Rain");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "治疗之雨");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Healing Rain");
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Целебный дождь");
 
         }
@@ -139,10 +139,10 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
         {
             // DisplayName.SetDefault("Healing");
             // Description.SetDefault("Life regeneration speed increased  \nYou are lucky today, worm... No, it's nothing. You misheard");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "治疗之雨");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Healing Rain");
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Исцеление");
             //Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Увеличена скорость регенерации жизни\nТебе сегодня повезло, червяк... Нет, ничего особенного. Вы ослышались");
-            //Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "生命再生速度提高\n今天算你走运，虫......不，没什么，你听错了");
+            //Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Life regeneration speed increased\nYou are lucky today, worm... No, it's nothing. You misheard");
         }
 
         public override void Update(Player player, ref int buffIndex)

@@ -29,9 +29,9 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Electric Arrow");
-            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "闪电箭");
+            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "Electric Arrow");
             // Tooltip.SetDefault("Chasing the storm ");
-            //Tooltip.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "“追逐风暴”");
+            //Tooltip.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "\"Chasing the storm\"");
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Электрическая стрела");
             //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "В погоне за бурей");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;

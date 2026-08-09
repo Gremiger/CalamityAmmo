@@ -31,9 +31,9 @@ namespace CalamityAmmo.Ammos.Hardmode
         public override void SetStaticDefaults()
         {
                 // DisplayName.SetDefault("Astral Bullet");
-                //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "幻星子弹");
-                // Tooltip.SetDefault(IsChinese() ? "击败诞生于星辰之间的恐惧以完成进化" : "Will upgrade after Astrum Deus is defeated");
-            ////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在打败白金星舰后升级\n在打败星神游龙会再次升级");
+                //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Phantom Star Bullet");
+                // Tooltip.SetDefault(IsChinese() ? "Defeat the fear born among the stars to complete your evolution" : "Will upgrade after Astrum Deus is defeated");
+            ////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Upgrades after defeating the Platinum Starship\nUpgrades again after defeating the Star God Dragon");
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Астральная пуля");
             //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Будет обновляться после поражения Аструм Деуса");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;

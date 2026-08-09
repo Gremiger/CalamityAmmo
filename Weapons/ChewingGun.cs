@@ -14,9 +14,9 @@ namespace CalamityAmmo.Weapons
 		public override void SetStaticDefaults()
 		{
 			// DisplayName.SetDefault("Chewing Gun");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "口枪糖");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Chewing Gun"); // pun: swaps the "fragrant" character in "chewing gum" for the character meaning "gun"
 			// Tooltip.SetDefault("barely-usable");
-			//Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "勉强能冲");
+			//Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Barely usable");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
@@ -68,7 +68,7 @@ namespace CalamityAmmo.Weapons
 		public override void SetStaticDefaults()
 		{
 			// DisplayName.SetDefault("Chewing Gum");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "口香糖");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Chewing Gum");
 			Main.projFrames[Projectile.type] = 1;
 			ProjectileID.Sets.DontAttachHideToAlpha[Type] = true;
 		}

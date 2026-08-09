@@ -40,7 +40,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
             Projectile.timeLeft = 900;
             Projectile.light = 0.5f;
             Projectile.alpha = 144;
-            Projectile.usesIDStaticNPCImmunity = true;//NPC是不是按照弹幕类型来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则只能击中一次，其余的会穿透，原版用它来控制喽啰的输出上限）
+            Projectile.usesIDStaticNPCImmunity = true;//Does the NPC gain immunity frames based on projectile type? (If set to true, when a player fires 8 of this projectile and they hit the enemy at the same time, only one will register a hit and the rest will pass through — vanilla uses this to cap the damage output of low-tier minion enemies)
             Projectile.idStaticNPCHitCooldown = 10;
         }
 

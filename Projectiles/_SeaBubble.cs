@@ -13,7 +13,7 @@ namespace CalamityAmmo.Projectiles
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Stream");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "水流");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Water Current");
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ручей");
         }
     

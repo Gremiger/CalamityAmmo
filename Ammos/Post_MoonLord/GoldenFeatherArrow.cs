@@ -34,9 +34,9 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Golden Feather Arrow");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "金羽箭");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Golden Feather Arrow");
             // Tooltip.SetDefault("May attract something small \nSummon red lightning when not critically hit");
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "可能会吸引某些小东西\n击中敌人且未暴击时召唤红色的闪电");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "May attract something small\nSummons red lightning when hitting an enemy without critically striking");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Золотого пера Стрела");
             //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Может привлечь что-то маленькое \nвызвать красную молнию, когда не нанесен критический удар");

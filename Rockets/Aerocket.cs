@@ -19,9 +19,9 @@ namespace CalamityAmmo.Rockets
         {
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
             // DisplayName.SetDefault("Aerocket");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "天蓝浮雷");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Sky Blue Floating Mine");
             // Tooltip.SetDefault("Right click to switch projectile into air-staying booby trap");
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "会爆炸出跟踪羽毛的滞空诡雷");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Explodes into an airborne booby trap that fires homing feathers");
         }
 
         public override void SetDefaults()
@@ -80,7 +80,7 @@ namespace CalamityAmmo.Rockets
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Aerocket");
-                //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "天蓝火箭");
+                //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Sky Blue Rocket");
                 Main.projFrames[Projectile.type] = 4;
             }
    

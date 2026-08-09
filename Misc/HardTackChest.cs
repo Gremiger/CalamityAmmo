@@ -25,7 +25,7 @@ namespace CalamityAmmo.Misc
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Auric Coffer");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "圣金源保险箱");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Auric Coffer");
             // Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}"); 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 3;
         }

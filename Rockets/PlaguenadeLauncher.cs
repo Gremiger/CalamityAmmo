@@ -16,7 +16,7 @@ namespace CalamityAmmo.Rockets
 		public override void SetStaticDefaults()
 		{
 			// DisplayName.SetDefault(" Plaguenade Launcher");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "瘟疫蜜蜂掷弹筒");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Plague Bee Grenade Launcher");
 			// Tooltip.SetDefault("Fires a brittle spiky ball\nEvery four attack will shoot 6 sand blasts");
 			Item.ResearchUnlockCount = 1;
 		}

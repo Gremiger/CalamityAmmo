@@ -24,7 +24,7 @@ namespace CalamityAmmo.Rockets
 {
     public abstract class ThePackRockets : ModProjectile
     {
-        private Vector2[] oldPosi = new Vector2[5]; //示例中记录16个坐标用于绘制，你可以试着修改这个值，并思考这意味着什么。
+        private Vector2[] oldPosi = new Vector2[5]; //In the example, 16 coordinates are recorded for drawing; try changing this value and think about what that means.
         private int frametime = 0;
         public override bool PreDraw(ref Color lightColor)
         {
@@ -92,7 +92,7 @@ namespace CalamityAmmo.Rockets
         }
         public virtual void Inai()
         {
-            //帧图！！
+            //Frame graphic!!
         }
         public override void AI()
         {
@@ -100,9 +100,9 @@ namespace CalamityAmmo.Rockets
             Vector2 targetCenter = Projectile.Center;
             float minTargetDistance = 2500f;
             bool homeIn = false;
-            if(Main.time % 2 == 0)    //每两帧记录一次（打一次点）
+            if(Main.time % 2 == 0)    //Record once every two frames (log one point)
     {
-                for (int i = oldPosi.Length - 1; i > 0; i--) //你应该知道为什么这里要写int i = oldVec.Length - 1
+                for (int i = oldPosi.Length - 1; i > 0; i--) //You should know why we write int i = oldVec.Length - 1 here
                 {
                     oldPosi[i] = oldPosi[i - 1];
                 }

@@ -43,9 +43,9 @@ namespace CalamityAmmo.Accessories
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Grapeshot");
-            ////DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "爆裂葡萄");
+            ////DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Bursting Grape");
             // Tooltip.SetDefault("There is a zombie on your lawn");
-            ////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "草地上有个脏比");
+            ////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "There's a jerk on the lawn");
         }
 
         public override void SetDefaults()

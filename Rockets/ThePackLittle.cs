@@ -85,7 +85,7 @@ namespace CalamityAmmo.Rockets
         }
         public virtual void Inai()
         {
-            //帧图！！
+            //Frame graphic!!
         }
         public override void AI()
         {

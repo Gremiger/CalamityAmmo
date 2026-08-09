@@ -33,12 +33,12 @@ namespace CalamityAmmo.Accessories
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Modified Coil ");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "魔改线圈");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Modified Coil");
             /* Tooltip.SetDefault("Increased ranged damage to 1.07x\nSlightly increases all ranged projectile velocity\n" +
-                " May occur electric leakage"); 
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "远程伤害+7%\n" +
-                "小幅提升远程弹幕的飞行速度\n" +
-                "可能会漏电");*/
+                " May occur electric leakage");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Ranged damage +7%\n" +
+                "Slightly increases the flight speed of ranged projectiles\n" +
+                "May cause electric leakage");*/
         }
 
         public override void SetDefaults()

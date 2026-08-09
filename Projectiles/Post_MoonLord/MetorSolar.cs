@@ -14,7 +14,7 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
 			// Total count animation frames
 			// DisplayName.SetDefault("Solar Fireball");
 			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Cолнечного огненный шар");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "日耀火球");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Solar Fireball");
 			Main.projFrames[Projectile.type] = 3;
 		}
 

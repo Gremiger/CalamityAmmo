@@ -11,9 +11,9 @@ namespace CalamityAmmo.Ammos.Hardmode
 		public override void SetStaticDefaults()
 		{
 			// DisplayName.SetDefault("Dazzling Astral Arrow");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "炫星箭");
-			// Tooltip.SetDefault(IsChinese() ? "星星，排列好了！\n你确定？" : "Look to the skies , The stars align");
-			////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在打败白金星舰后升级\n在打败星神游龙会再次升级");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Dazzling Star Arrow");
+			// Tooltip.SetDefault(IsChinese() ? "The stars are aligned!\nAre you sure?" : "Look to the skies , The stars align");
+			////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Upgrades after defeating the Platinum Starship\nUpgrades again after defeating the Star God Dragon");
 			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ослепительная Астральная Стрела");
 			//Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "БЗвезды расставлены!\n вы уверены?");
 			Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;

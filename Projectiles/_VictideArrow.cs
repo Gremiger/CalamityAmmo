@@ -49,9 +49,9 @@ namespace CalamityAmmo.Projectiles
             Projectile.timeLeft = 300;
             Projectile.tileCollide = true;
             Projectile.ignoreWater = false;
-            Projectile.usesLocalNPCImmunity = true;//NPC是不是按照弹幕ID来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则八个都能击中）
-            Projectile.localNPCHitCooldown = 20;//上一个设定为true则被调用，NPC按照弹幕ID来获取多少无敌帧
-            Projectile.usesIDStaticNPCImmunity = false;//NPC是不是按照弹幕类型来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则只能击中一次，其余的会穿透）
+            Projectile.usesLocalNPCImmunity = true;//Does the NPC gain immunity frames based on projectile ID? (If set to true, when a player fires 8 of this projectile and they hit the enemy at the same time, all 8 will register a hit)
+            Projectile.localNPCHitCooldown = 20;//If the previous one is set to true, this is used: how many immunity frames the NPC gets based on projectile ID
+            Projectile.usesIDStaticNPCImmunity = false;//Does the NPC gain immunity frames based on projectile type? (If set to true, when a player fires 8 of this projectile and they hit the enemy at the same time, only one will register a hit and the rest will pass through)
             Projectile.idStaticNPCHitCooldown = 15;
             Projectile.netImportant = true;
             Projectile.arrow = true;
@@ -64,11 +64,11 @@ namespace CalamityAmmo.Projectiles
         {
 			if (Projectile.wet && !hasLiquidBoost)
 			{
-				// 进入液体：增加extraUpdates
+				// Entering liquid: increase extraUpdates
 				Projectile.extraUpdates = originalExtraUpdates + 1;
 				hasLiquidBoost = true;
 
-				// 可以添加视觉效果
+				// Visual effects can be added here
 				if (Main.rand.NextBool(3))
 				{
 					Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height,
@@ -79,7 +79,7 @@ namespace CalamityAmmo.Projectiles
 			}
 			else if (!Projectile.wet && hasLiquidBoost)
 			{
-				// 离开液体：恢复原始值
+				// Leaving liquid: restore the original value
 				Projectile.extraUpdates = originalExtraUpdates;
 				hasLiquidBoost = false;
 			}

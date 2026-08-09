@@ -23,10 +23,10 @@ namespace CalamityAmmo.Projectiles.GenerateByAccessories
 		}
 		public override void AI()
 		{
-			// 发出红光
+			// Emit red light
 			Lighting.AddLight(Projectile.position, 0.0f, 0.0f, 0.2f);
 
-			// 线性粒子效果
+			// Linear particle effect
 			for (int i = 0; i < 2; i++)
 			{
 				Dust d = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Vortex, 0, 0, 100, Color.White, 1f);
@@ -36,17 +36,17 @@ namespace CalamityAmmo.Projectiles.GenerateByAccessories
 				d.scale = Main.rand.Next(90, 110) * 0.008f;
 			}
 
-			// 获取目标NPC
+			// Get the target NPC
 			NPC target = Main.npc[(int)Projectile.ai[0]];
-			// 如果敌对npc是活着的
+			// If the target NPC is alive
 			if (target.active)
 			{
-				// 计算朝向目标的向量
+				// Calculate the vector pointing toward the target
 				Vector2 targetVec = target.Center - Projectile.Center;
 				targetVec.Normalize();
-				// 目标向量是朝向目标的大小为20的向量
+				// The target vector is a vector of magnitude 20 pointing toward the target
 				targetVec *= 6f;
-				// 朝向npc的单位向量*20 + 3.33%偏移量
+				// Unit vector toward the NPC * 20 + 3.33% offset
 				Projectile.velocity = (Projectile.velocity * 30f + targetVec) / (31f);
 			}
 		}

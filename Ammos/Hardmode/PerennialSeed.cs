@@ -32,8 +32,8 @@ namespace CalamityAmmo.Ammos.Hardmode
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Perennial Seed");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "永恒种子");
-            // Tooltip.SetDefault(IsChinese() ? "长盛不衰" : "Bloom and bear fruit on the enemies");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Perennial Seed");
+            // Tooltip.SetDefault(IsChinese() ? "Ever-flourishing" : "Bloom and bear fruit on the enemies");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Многолетнее Семя ");
             //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Цвети и приноси плоды на врагов");

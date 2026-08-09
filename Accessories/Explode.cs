@@ -44,10 +44,10 @@ namespace CalamityAmmo.Accessories
             Projectile.timeLeft = 24;
             Projectile.tileCollide = false ;
             Projectile.ignoreWater = true;
-            Projectile.usesLocalNPCImmunity = true;//NPC是不是按照弹幕ID来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则八个都能击中，不骗伤，原版夜明弹的反骗伤就是如此）
-            Projectile.localNPCHitCooldown = 60;//上一个设定为true则被调用，NPC按照弹幕ID来获取多少无敌帧
-            Projectile.usesIDStaticNPCImmunity = false;//NPC是不是按照弹幕类型来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则只能击中一次，其余的会穿透，原版用它来控制喽啰的输出上限）
-            Projectile.idStaticNPCHitCooldown = 60;//上一个设定为true则被调用，NPC按照弹幕类型来获取多少无敌帧
+            Projectile.usesLocalNPCImmunity = true;//Does the NPC get immunity frames tracked by projectile ID? (If set to true, if a player fires 8 of this projectile and they all hit an enemy at once, all eight will connect - no fake damage; this is how the vanilla Nightglow's anti-fake-damage works)
+            Projectile.localNPCHitCooldown = 60;//Used when the above is set to true; determines how many immunity frames the NPC gets, tracked by projectile ID
+            Projectile.usesIDStaticNPCImmunity = false;//Does the NPC get immunity frames tracked by projectile type? (If set to true, if a player fires 8 of this projectile and they all hit an enemy at once, only one will connect and the rest will pass through; vanilla uses this to cap minion damage output)
+            Projectile.idStaticNPCHitCooldown = 60;//Used when the above is set to true; determines how many immunity frames the NPC gets, tracked by projectile type
             Projectile.netImportant = false;
         }
         public override bool? CanCutTiles() => true;

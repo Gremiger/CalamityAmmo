@@ -24,8 +24,8 @@ namespace CalamityAmmo.Ammos.Hardmode
         {
             // DisplayName.SetDefault("Hydrothermic Arrow");
             // Tooltip.SetDefault("You dare strike my shield with your spear? That's gonna end with you in pieces!");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "渊泉箭");
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "以子之矛攻子之盾，就会产生大爆炸！");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Abyssal Spring Arrow");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Strike your own shield with your own spear, and you get a huge explosion!");
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "");
             //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;

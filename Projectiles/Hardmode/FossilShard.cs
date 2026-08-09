@@ -11,7 +11,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("化石碎片");
+			// DisplayName.SetDefault("Fossil Shard");
 		}
 
 		public override void SetDefaults()
@@ -47,7 +47,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("化石碎片");
+			// DisplayName.SetDefault("Fossil Shard");
 		}
 
 		public override void SetDefaults()

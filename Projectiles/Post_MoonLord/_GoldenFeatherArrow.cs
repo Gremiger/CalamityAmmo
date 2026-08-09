@@ -18,7 +18,7 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
 		{
 			// DisplayName.SetDefault("GoldenFeather Arrow");
 			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Золотого пера Стрела");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "金羽箭");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Golden Feather Arrow");
 			ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
 			ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
 		}

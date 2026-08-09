@@ -15,7 +15,7 @@ namespace CalamityAmmo.Misc
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Auric Compressed Biscuits");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "圣金源压缩饼干");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Auric Compressed Biscuits");
             // Tooltip.SetDefault("This twisted dreamscape, surrounded by unnatural pillars under a dark and hazy sky.\nNatural law has been upturned. What will you make of it?");
             Item.ResearchUnlockCount = 1;
             ItemID.Sets.ItemNoGravity[Item.type] = true;

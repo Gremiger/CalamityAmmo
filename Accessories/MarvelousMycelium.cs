@@ -34,13 +34,13 @@ namespace CalamityAmmo.Accessories
         public override void SetStaticDefaults()
         {
 			// DisplayName.SetDefault("Marvelous Mycelium");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "神奇菌丝");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Marvelous Mycelium");
 			/* Tooltip.SetDefault("10% increased ranged damage\nSlightly increases all ranged projectile velocity\n" +
-                "Death goes life on, and life achieves death soon"); 
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), 
-                "未受伤时减少5点防御与1点生命再生，提升6%远程伤害与9%远程暴击率\n" +
-                "受伤后给予5秒与菇共生buff，期间减少6%远程伤害与9%远程暴击，不再减少生存属性\n"+
-                "死亡延续生命，生命成就死亡");*/
+                "Death goes life on, and life achieves death soon");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese),
+                "While unhurt, reduces defense by 5 and life regen by 1, but increases ranged damage by 6% and ranged crit chance by 9%\n" +
+                "After taking damage, grants a 5-second Mushroom Symbiosis buff, during which ranged damage and crit chance reductions of 6% and 9% apply instead, no longer reducing survivability stats\n"+
+                "Death carries life onward, and life becomes the fulfillment of death");*/
 		}
 
 		public override void SetDefaults()

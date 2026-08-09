@@ -11,9 +11,9 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
 		public override void SetStaticDefaults()
 		{
 			// DisplayName.SetDefault("Victide Arrow");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "胜潮箭");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Victide Arrow");
 			// Tooltip.SetDefault("Move faster under water and increase damage to 2x \n 'Take my high-pressure gas cylinder '");
-			//Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在水下移动更快且伤害提升至2倍\n“拿我的高压气瓶来”");
+			//Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Moves faster underwater and damage is increased to 2x\n\"Take my high-pressure gas cylinder\"");
 			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Победоносная стрела");
 			//Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Двигайтесь быстрее под водой и увеличивайте урон в 2 раза\n'Возьмите мой газовый баллон высокого давления'");
 			Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;

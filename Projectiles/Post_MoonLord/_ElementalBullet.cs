@@ -33,7 +33,7 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Shredded Celestial Carrot");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "天体萝卜丝");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Shredded Celestial Carrot");
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Измельченная Небесная морковь");
             Main.projFrames[Projectile.type] = 1;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
@@ -49,10 +49,10 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
             Projectile.timeLeft = 300;
             Projectile.tileCollide = true;
             Projectile.ignoreWater = true;
-            Projectile.usesLocalNPCImmunity = true;//NPC是不是按照弹幕ID来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则八个都能击中，不骗伤，原版夜明弹的反骗伤就是如此）
-            Projectile.localNPCHitCooldown = 15;//上一个设定为true则被调用，NPC按照弹幕ID来获取多少无敌帧
-            Projectile.usesIDStaticNPCImmunity = false;//NPC是不是按照弹幕类型来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则只能击中一次，其余的会穿透，原版用它来控制喽啰的输出上限）
-            Projectile.idStaticNPCHitCooldown = 10;//上一个设定为true则被调用，NPC按照弹幕类型来获取多少无敌帧
+            Projectile.usesLocalNPCImmunity = true;//Does the NPC get invincibility frames based on projectile ID? (If set to true, and the player fires 8 of this projectile that all hit an enemy at once, all eight will land damage without the "fake damage" reduction — this is how vanilla's Night Bullet avoids the anti-fake-damage mechanic.)
+            Projectile.localNPCHitCooldown = 15;//If the above is set to true, this gets used: how many invincibility frames the NPC gets, based on projectile ID
+            Projectile.usesIDStaticNPCImmunity = false;//Does the NPC get invincibility frames based on projectile type? (If set to true, and the player fires 8 of this projectile that all hit an enemy at once, only one hit will land and the rest will pass through — vanilla uses this to cap the damage output of minions.)
+            Projectile.idStaticNPCHitCooldown = 10;//If the above is set to true, this gets used: how many invincibility frames the NPC gets, based on projectile type
             Projectile.netImportant = false;
             Projectile.extraUpdates = 2;
         }

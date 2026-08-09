@@ -29,9 +29,9 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Desert Feather Arrow");
-            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "荒漠羽箭");
+            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "Desert Feather Arrow");
             // Tooltip.SetDefault("When the feather was still on the vulture, it wasn't so fast ");
-            //Tooltip.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "“它们还在秃鹰身上的时候可没这么快啊”");
+            //Tooltip.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "\"They weren't this fast when they were still on the vulture\"");
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Стрела пустынного пера");
             //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Когда перо все еще было на стервятнике, это было не так быстро");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;

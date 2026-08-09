@@ -34,9 +34,9 @@ namespace CalamityAmmo.Ammos.Hardmode
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("WeakAstralArrow");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "尘星箭");
-            // Tooltip.SetDefault(IsChinese() ? "蠕虫说，“是的我有很多父亲”" : "The worm said, \"Yes, I have many fathers.\"");
-            ////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在打败白金星舰后升级\n在打败星神游龙会再次升级");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Dust Star Arrow");
+            // Tooltip.SetDefault(IsChinese() ? "The worm said, \"Yes, I have many fathers.\"" : "The worm said, \"Yes, I have many fathers.\"");
+            ////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Upgrades after defeating the Platinum Starship\nUpgrades again after defeating Astrum Deus");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Слабая Астральная Стрела");
             //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Мощности недостаточно...\nБудет обновляться после поражения Аструм Деуса");

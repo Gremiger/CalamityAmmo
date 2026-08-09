@@ -33,8 +33,8 @@ namespace CalamityAmmo.Ammos.Hardmode
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Fossil Bullet");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "化石子弹");
-            // Tooltip.SetDefault(IsChinese() ? "坚固的化石击碎敌人的防御\n酸腐的化石释放积年的余毒" : "Solid fossils smash the enemy's defense and cause sulphuric poisoning");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Fossil Bullet");
+            // Tooltip.SetDefault(IsChinese() ? "Solid fossils smash the enemy's defense\nAcid-corroded fossils release years of accumulated poison" : "Solid fossils smash the enemy's defense and cause sulphuric poisoning");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ископаемая пуля");
             //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Прочные окаменелости сокрушают оборону врага \nГниющие в кислоте окаменелости высвобождают годы остаточного яда");

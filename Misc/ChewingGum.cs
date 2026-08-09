@@ -17,11 +17,11 @@ namespace CalamityAmmo.Misc
         public override void SetStaticDefaults()
         {
 			// DisplayName.SetDefault("Chewing Gum");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "专注口香糖");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Focus Chewing Gum");
 			/* Tooltip.SetDefault("Increases view range for guns (Right click to zoom out)\n" +
-                "When holding a gun, display a line of sight and replace cursor with a sight bead"); 
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "增加枪的可视范围（右键点击可缩小）\n" +
-                "手持枪械类武器时，显示一条瞄准线，并将光标替换为准星");*/
+                "When holding a gun, display a line of sight and replace cursor with a sight bead");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Increases view range for guns (right-click to zoom out)\n" +
+                "When holding a gun-type weapon, displays an aiming line and replaces the cursor with a crosshair");*/
 		}
 
 		public override void SetDefaults()

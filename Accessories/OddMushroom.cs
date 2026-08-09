@@ -39,11 +39,11 @@ namespace CalamityAmmo.Accessories
 		public override void SetStaticDefaults()
         {
 			// DisplayName.SetDefault("Odd Mushroom(equipable)");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "致幻蘑菇（可装备）");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Hallucinogenic Mushroom (equipable)");
 			/* Tooltip.SetDefault("When hide visual grains the Trippy buff\n" +
-                " You can't always trust what you see."); 
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "隐藏饰品可见性时给予幻菇中毒buff\n" +
-                "“眼睛所见的，未必真实”");*/
+                " You can't always trust what you see.");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Grants the Trippy Fungus buff when accessory visibility is hidden\n" +
+                "\"What the eyes see is not necessarily real\"");*/
 		}
 
 		public override void SetDefaults()

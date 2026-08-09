@@ -33,7 +33,7 @@ namespace CalamityAmmo.Projectiles
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Pearl Arrow");
-            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "珍珠箭");
+            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "Pearl Arrow");
             Main.projFrames[Projectile.type] = 1;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
             //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Жемчужная стрела");
@@ -49,10 +49,10 @@ namespace CalamityAmmo.Projectiles
             Projectile.timeLeft = 300;
             Projectile.tileCollide = true;
             Projectile.ignoreWater = true;
-            Projectile.usesLocalNPCImmunity = true;//NPC是不是按照弹幕ID来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则八个都能击中，不骗伤，原版夜明弹的反骗伤就是如此）
-            Projectile.localNPCHitCooldown = 15;//上一个设定为true则被调用，NPC按照弹幕ID来获取多少无敌帧
-            Projectile.usesIDStaticNPCImmunity = false;//NPC是不是按照弹幕类型来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则只能击中一次，其余的会穿透，原版用它来控制喽啰的输出上限）
-            Projectile.idStaticNPCHitCooldown = 10;//上一个设定为true则被调用，NPC按照弹幕类型来获取多少无敌帧
+            Projectile.usesLocalNPCImmunity = true;//Does the NPC gain immunity frames based on projectile ID? (If set to true, when a player fires 8 of this projectile and they all hit the enemy at the same time, all 8 will register damage without being counted as fake damage — this is how the vanilla Nightglow Bullet's anti-fake-damage works)
+            Projectile.localNPCHitCooldown = 15;//If the previous one is set to true, this is used: how many immunity frames the NPC gets based on projectile ID
+            Projectile.usesIDStaticNPCImmunity = false;//Does the NPC gain immunity frames based on projectile type? (If set to true, when a player fires 8 of this projectile and they hit the enemy at the same time, only one will register a hit and the rest will pass through — vanilla uses this to cap the damage output of low-tier minion enemies)
+            Projectile.idStaticNPCHitCooldown = 10;//If the previous one is set to true, this is used: how many immunity frames the NPC gets based on projectile type
             Projectile.netImportant = true;
             AIType = ProjectileID.WoodenArrowFriendly;
             Projectile.arrow = true;
@@ -61,28 +61,28 @@ namespace CalamityAmmo.Projectiles
         public override bool? CanCutTiles() => true;
         public override void AI()
         {
-			// 计算箭尾位置（沿着速度反方向偏移）
+			// Calculate the arrow tail position (offset backward along the velocity direction)
 			Vector2 tailPosition;
 
 			if (Projectile.velocity != Vector2.Zero)
 			{
-				// 获取箭的速度方向
+				// Get the arrow's velocity direction
 				Vector2 direction = Vector2.Normalize(Projectile.velocity);
 
-				// 计算尾部偏移量（箭的长度一半，或者自定义值）
-				// 可以根据实际箭的大小调整这个值
+				// Calculate the tail offset (half the arrow's length, or a custom value)
+				// Adjust this value based on the actual arrow size
 				float tailOffset = 10f;
 
-				// 计算尾部位置（从中心向速度反方向偏移）
+				// Calculate the tail position (offset from the center opposite to the velocity)
 				tailPosition = Projectile.Center - direction * tailOffset;
 			}
 			else
 			{
-				// 如果没有速度，使用当前位置
+				// If there is no velocity, use the current position
 				tailPosition = Projectile.position;
 			}
 
-			// 在尾部生成粒子
+			// Spawn particles at the tail
 			/*for (int i = 0; i < 4; i++)
 			{
 				int num = Dust.NewDust(tailPosition, base.Projectile.width, base.Projectile.height, DustID.BlueFlare, 0f, 0f, 100, default(Color), 0.6f);
@@ -113,39 +113,39 @@ namespace CalamityAmmo.Projectiles
 		{
 			if (Projectile.owner == Main.myPlayer)
 			{
-				// 获取原始弹幕速度的方向
+				// Get the direction of the original projectile's velocity
 				Vector2 originalDirection = Projectile.velocity;
 
 				originalDirection.Normalize();
 
-				// 计算反方向（向外飞的方向）
+				// Calculate the opposite direction (the outward-flying direction)
 				Vector2 outwardDirection = -originalDirection;
 
-				// 随机选择是顺时针还是逆时针旋转
+				// Randomly choose clockwise or counterclockwise rotation
 				bool clockwise = Main.rand.NextBool();
 
-				// 随机角度范围：30度到50度
+				// Random angle range: 30 to 50 degrees
 				float randomAngle = MathHelper.ToRadians(Main.rand.NextFloat(30f, 45f));
 
-				// 根据方向应用旋转
+				// Apply rotation based on the chosen direction
 				if (clockwise)
 				{
-					randomAngle = -randomAngle; // 逆时针
+					randomAngle = -randomAngle; // Counterclockwise
 				}
 
-				// 应用旋转
+				// Apply the rotation
 				Vector2 finalDirection = outwardDirection.RotatedBy(randomAngle);
 				finalDirection.Normalize();
 
-				// 设置向外飞行的速度
+				// Set the outward flight speed
 				float outwardSpeed = 8f;
 				Vector2 outwardVelocity = finalDirection * outwardSpeed;
 
-				// 在爆炸点位置生成弹幕
+				// Spawn the projectile at the explosion point
 				Vector2 spawnPosition = Projectile.position-originalDirection*16f;
 
 
-				// 生成弹幕
+				// Spawn the projectile
 				Projectile.NewProjectile(
 					Projectile.GetSource_FromThis(),
 					spawnPosition.X,

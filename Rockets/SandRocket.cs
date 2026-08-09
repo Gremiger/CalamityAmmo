@@ -24,10 +24,10 @@ namespace CalamityAmmo.Rockets
         {
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
             // DisplayName.SetDefault("Earth-Penetrating Missile");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "钻地导弹");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Earth-Penetrating Missile");
             /* Tooltip.SetDefault("Can go through tiles and tracking enemies\n" +
                 "Move faster in sand blocks"); */
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在物块中自动寻的\n在沙子中移动更快");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Auto-homes through tiles\nMoves faster in sand");
         }
 
         public override void SetDefaults()
@@ -137,7 +137,7 @@ namespace CalamityAmmo.Rockets
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Earth-Penetrating Missile");
-            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "钻地导弹");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Earth-Penetrating Missile");
             Main.projFrames[Projectile.type] = 12;
         }
         public override void SetDefaults()
