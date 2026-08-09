@@ -61,13 +61,13 @@ namespace CalamityAmmo.Projectiles.Hardmode
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
+            bool wasOiled = target.HasBuff(BuffID.Oiled);
             target.AddBuff(BuffID.Oiled, 180);
-            if (target.HasBuff(BuffID.Oiled))
-                {
+            if (wasOiled)
+            {
                 target.AddBuff(BuffID.OnFire3, 120);
                 target.AddBuff(ModContent.BuffType<WeakBrimstoneFlames>(), 120);
             }
-            
         }
         public override void OnKill(int timeLeft)
         {

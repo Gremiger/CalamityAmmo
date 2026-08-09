@@ -8,6 +8,7 @@ using CalamityMod.Items.Accessories;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameInput;
@@ -55,6 +56,8 @@ namespace CalamityAmmo
 		public bool hotCoil;
 		public int hotBombCount;
 		public bool electricCoil;
+		public List<int> ElectricCoilHitNPC = new List<int>();
+		public int arrowManaCost = 0;
 		public bool autoCoil;
 		public int autoSelectMode;
 		public bool victide;
@@ -326,15 +329,27 @@ namespace CalamityAmmo
 			if (Main.rand.NextBool(15))
 			{
 				int totalprojectiles = 0;
-				for (int i = 0; i < 1000; i++)
+				for (int i = 0; i < Main.maxProjectiles; i++)
 				{
 					if (Main.projectile[i].active && Main.projectile[i].owner == Player.whoAmI && (Main.projectile[i].type == ModContent.ProjectileType<Crabulon_Spore>()))
 					{
 						totalprojectiles++;
+						if (totalprojectiles >= 10)
+						{
+							break;
+						}
 					}
 				}
 				if (Main.rand.Next(15) >= totalprojectiles && totalprojectiles < 10)
 				{
+					List<Vector2> existingSporeCenters = new List<Vector2>();
+					for (int i = 0; i < Main.maxProjectiles; i++)
+					{
+						if (Main.projectile[i].active && Main.projectile[i].owner == Player.whoAmI && Main.projectile[i].aiStyle == 105)
+						{
+							existingSporeCenters.Add(Main.projectile[i].Center);
+						}
+					}
 					int num3 = 24;
 					int num4 = 90;
 					for (int j = 0; j < 50; j++)
@@ -369,9 +384,9 @@ namespace CalamityAmmo
 								}
 								if (flag)
 								{
-									for (int k = 0; k < 1000; k++)
+									foreach (Vector2 existingCenter in existingSporeCenters)
 									{
-										if (Main.projectile[k].active && Main.projectile[k].owner == Player.whoAmI && Main.projectile[k].aiStyle == 105 && (center - Main.projectile[k].Center).Length() < 48f)
+										if ((center - existingCenter).Length() < 48f)
 										{
 											flag = false;
 											break;

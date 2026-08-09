@@ -47,24 +47,25 @@ namespace CalamityAmmo
 				return;
 			Vector2 targetPos = projectile.Center;
 			int tarWho = -1;
-			
+			int autoSelectMode = player.GetModPlayer<CaePlayer>().autoSelectMode;
+
 			for (int i = 0; i < Main.maxNPCs; i++)
 			{
 				NPC npc = Main.npc[i];
-				
+
 				float num = npc.width / 2 + npc.height / 2;
 				if (npc.CanBeChasedBy(projectile, true) && (Vector2.Distance(npc.Center, projectile.Center) < distanceRequired + num) && (ignoreTiles || Collision.CanHit(projectile.Center, 1, 1, Main.npc[i].Center, 1, 1)))
 				{
-					if (player.GetModPlayer<CaePlayer>().autoSelectMode == 1)
+					if (autoSelectMode == 1)
 					{
 						if ((targetPos == projectile.Center)
 						|| (Vector2.Distance(targetPos, player.Center) > Vector2.Distance(npc.Center, player.Center)))
 						{
 							targetPos = npc.Center;
-							
+
 						}
 					}
-					if (player.GetModPlayer<CaePlayer>().autoSelectMode == 3)
+					if (autoSelectMode == 3)
 					{
 						if ((tarWho == -1)
 						|| (Main.npc[tarWho].life > npc.life))
@@ -73,7 +74,7 @@ namespace CalamityAmmo
 							targetPos = Main.npc[tarWho].Center;
 						}
 					}
-					if (player.GetModPlayer<CaePlayer>().autoSelectMode == 4)
+					if (autoSelectMode == 4)
 					{
 						if ((tarWho == -1)
 						|| ((Main.npc[tarWho].GetLifePercent() > npc.GetLifePercent())&&npc.GetLifePercent()<1f))
@@ -87,7 +88,7 @@ namespace CalamityAmmo
 							//Main.NewText("npc.GetLifePercent()=" + npc.GetLifePercent());
 						}
 					}
-					if (player.GetModPlayer<CaePlayer>().autoSelectMode == 2)
+					if (autoSelectMode == 2)
 					{
 						if ((targetPos == projectile.Center)
 						|| (Vector2.Distance(targetPos - Main.screenPosition, Main.MouseScreen) > Vector2.Distance(npc.Center - Main.screenPosition, Main.MouseScreen)))
@@ -98,7 +99,7 @@ namespace CalamityAmmo
 							targetPos = npc.Center;
 						}
 					}
-					if (player.GetModPlayer<CaePlayer>().autoSelectMode == 5)
+					if (autoSelectMode == 5)
 					{
 						if ((tarWho == -1)
 						|| (Main.npc[tarWho].defense> npc.defense))
@@ -107,7 +108,7 @@ namespace CalamityAmmo
 							targetPos = Main.npc[tarWho].Center;
 						}
 					}
-					if (player.GetModPlayer<CaePlayer>().autoSelectMode == 6)
+					if (autoSelectMode == 6)
 					{
 						if ((tarWho == -1)
 						|| (Main.npc[tarWho].defense < npc.defense))

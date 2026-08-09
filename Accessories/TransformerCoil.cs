@@ -2,7 +2,6 @@
 using CalamityMod.Items.Materials;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using CalamityMod.Tiles.FurnitureStatigel;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,7 +10,6 @@ namespace CalamityAmmo.Accessories
 {
 	public class TransformerCoil : ModItem
 	{
-		public static List<int> HitNPC = new List<int>();
 		public override void SetStaticDefaults()
 		{
 			Item.ResearchUnlockCount = 1;

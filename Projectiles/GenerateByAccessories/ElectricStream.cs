@@ -26,14 +26,17 @@ namespace CalamityAmmo.Projectiles.GenerateByAccessories
 			// 发出红光
 			Lighting.AddLight(Projectile.position, 0.0f, 0.0f, 0.2f);
 
-			// 线性粒子效果
-			for (int i = 0; i < 2; i++)
+			// 线性粒子效果（按extraUpdates节流，避免每个子步都生成粒子）
+			if (Main.rand.Next(Projectile.extraUpdates) == 0)
 			{
-				Dust d = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Vortex, 0, 0, 100, Color.White, 1f);
-				d.position = Projectile.Center;// - Projectile.velocity * i / 3f;
-				d.velocity *= 0.2f;
-				d.noGravity = true;
-				d.scale = Main.rand.Next(90, 110) * 0.008f;
+				for (int i = 0; i < 2; i++)
+				{
+					Dust d = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Vortex, 0, 0, 100, Color.White, 1f);
+					d.position = Projectile.Center;// - Projectile.velocity * i / 3f;
+					d.velocity *= 0.2f;
+					d.noGravity = true;
+					d.scale = Main.rand.Next(90, 110) * 0.008f;
+				}
 			}
 
 			// 获取目标NPC

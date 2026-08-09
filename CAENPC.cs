@@ -33,10 +33,6 @@ namespace CalamityAmmo
 		public override void AI(NPC npc)
 		{
 			if (elementaldouble > 0) elementaldouble--;
-			if (!npc.active || npc.life <= 0 || npc == null)
-			{
-				TransformerCoil.HitNPC.Remove(npc.whoAmI);
-			}
 		}
 		public override void PostDraw(NPC npc, SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{

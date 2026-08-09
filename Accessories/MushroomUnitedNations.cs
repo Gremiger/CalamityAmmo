@@ -95,10 +95,10 @@ namespace CalamityAmmo.Accessories
 					NPC npc = Main.npc[i];
 					if (npc.CanBeChasedBy() && (Vector2.Distance(npc.Center, Projectile.Center) < 1080f))
 					{
-						if ((targetPos == Main.player[Projectile.owner].Center) ||
-							(Vector2.Distance(targetPos, Main.player[Projectile.owner].Center)
+						if ((targetPos == Main.player[Projectile.owner].Center ||
+							Vector2.Distance(npc.Center, Main.player[Projectile.owner].Center)
 							<
-							Vector2.Distance(npc.Center, Main.player[Projectile.owner].Center)) &&
+							Vector2.Distance(targetPos, Main.player[Projectile.owner].Center)) &&
 				Collision.CanHit(Projectile.position, Projectile.width, Projectile.height, npc.position, npc.width, npc.height))
 						{
 							targetPos = npc.Center;

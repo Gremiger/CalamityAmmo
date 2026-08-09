@@ -73,17 +73,6 @@ namespace CalamityAmmo.Global
 			Player player = Main.player[projectile.owner];
 			CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
 
-			if (modplayer.Radio && player.heldProj != projectile.whoAmI)
-			{
-				foreach (var proj in Main.projectile)
-					if (proj.type != ModContent.ProjectileType<TeslaAura>() && proj.CountsAsClass<RangedDamageClass>())
-					{
-						int Proj = Projectile.NewProjectile(projectile.GetSource_FromThis(), proj.Center, proj.velocity, ModContent.ProjectileType<TeslaAura>(), (int)(projectile.damage * 0.2f), 0f, player.whoAmI);
-						Main.projectile[Proj].Center = proj.Center;
-						Main.projectile[Proj].velocity = proj.velocity;
-						Main.projectile[Proj].timeLeft = 1;
-					}
-			}
 			if (//player.HeldItem.type == ModContent.ItemType<BeenadeLauncher>() ||
 			player.HeldItem.type == ModContent.ItemType<PlaguenadeLauncher>())
 			{
@@ -162,7 +151,7 @@ namespace CalamityAmmo.Global
 				&& projectile.type != ModContent.ProjectileType<ArcaneArrow_Proj>()
 				&& projectile.type != ProjectileID.PhantasmArrow)
 			{
-				if (player.CheckMana(CAEGlobalItem.manaCost))
+				if (player.CheckMana(modplayer.arrowManaCost))
 				{
 					if (modplayer.Arcane)
 					{
@@ -277,38 +266,41 @@ namespace CalamityAmmo.Global
 				if (modplayer.electricCoil)
 				{
 					target.AddBuff(BuffID.Electrified, 45);
-					if (!TransformerCoil.HitNPC.Contains(target.whoAmI)) TransformerCoil.HitNPC.Add(target.whoAmI);
-					if (TransformerCoil.HitNPC.Count > 2)
+					List<int> hitNPC = modplayer.ElectricCoilHitNPC;
+					if (!hitNPC.Contains(target.whoAmI)) hitNPC.Add(target.whoAmI);
+					if (hitNPC.Count > 2)
 					{
-						TransformerCoil.HitNPC.RemoveAt(0);
+						hitNPC.RemoveAt(0);
 					}
-					if (TransformerCoil.HitNPC.Count == 2)
+					if (hitNPC.Count == 2)
 					{
-						if (Vector2.Distance(Main.npc[TransformerCoil.HitNPC[1]].Center, Main.npc[TransformerCoil.HitNPC[0]].Center)
-						<= 1440)
-							if (target.whoAmI == TransformerCoil.HitNPC[0])
+						NPC firstNPC = Main.npc[hitNPC[0]];
+						NPC secondNPC = Main.npc[hitNPC[1]];
+						if (!firstNPC.active || !secondNPC.active)
+						{
+							hitNPC.Clear();
+						}
+						else if (Vector2.Distance(secondNPC.Center, firstNPC.Center) <= 1440)
+						{
+							if (target.whoAmI == firstNPC.whoAmI)
 							{
-								//Main.npc[TransformerCoil.HitNPC[1]].SimpleStrikeNPC(damageDone / 2,
-								//hit.HitDirection * -1);
-								Vector2 toTarget = Main.npc[TransformerCoil.HitNPC[1]].Center - target.Center;
+								Vector2 toTarget = secondNPC.Center - target.Center;
 								toTarget.Normalize();
 								toTarget *= 6f;
 								toTarget = toTarget.RotatedBy(Main.rand.NextFloatDirection() * 0.4f);
 								Projectile.NewProjectile(player.GetSource_FromThis("eleCoil"), target.Center + target.velocity * 4f,
-											toTarget, ModContent.ProjectileType<ElectricStream>(), damageDone / 3, 5f, projectile.owner, Main.npc[TransformerCoil.HitNPC[1]].whoAmI);
+											toTarget, ModContent.ProjectileType<ElectricStream>(), damageDone / 3, 5f, projectile.owner, secondNPC.whoAmI);
 							}
-						if (target.whoAmI == TransformerCoil.HitNPC[1])
-						{
-							//Main.npc[TransformerCoil.HitNPC[0]].SimpleStrikeNPC(damageDone / 2,
-							//hit.HitDirection * -1);
-							Vector2 toTarget = Main.npc[TransformerCoil.HitNPC[0]].Center - target.Center;
-							toTarget.Normalize();
-							toTarget *= 6f;
-							toTarget = toTarget.RotatedBy(Main.rand.NextFloatDirection() * 0.4f);
-							Projectile.NewProjectile(player.GetSource_FromThis("eleCoil"), target.Center + target.velocity * 4f,
-										toTarget, ModContent.ProjectileType<ElectricStream>(), damageDone / 3, 5f, projectile.owner, Main.npc[TransformerCoil.HitNPC[0]].whoAmI);
+							if (target.whoAmI == secondNPC.whoAmI)
+							{
+								Vector2 toTarget = firstNPC.Center - target.Center;
+								toTarget.Normalize();
+								toTarget *= 6f;
+								toTarget = toTarget.RotatedBy(Main.rand.NextFloatDirection() * 0.4f);
+								Projectile.NewProjectile(player.GetSource_FromThis("eleCoil"), target.Center + target.velocity * 4f,
+											toTarget, ModContent.ProjectileType<ElectricStream>(), damageDone / 3, 5f, projectile.owner, firstNPC.whoAmI);
+							}
 						}
-
 					}
 				}
 			}

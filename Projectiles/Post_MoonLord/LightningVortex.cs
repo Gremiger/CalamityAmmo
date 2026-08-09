@@ -82,18 +82,24 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
             if (!hasHitEnemy)
             {
                 float distance = 550f;
+                int closest = -1;
                 for (int i = 0; i < Main.npc.Length; i++)
                 {
                     if (Main.npc[i].CanBeChasedBy(Projectile) && Vector2.Distance(Main.npc[i].Center, Projectile.Center) < distance)
                     {
-                        Vector2 velocity = Main.npc[i].Center - Projectile.Center;
-                        velocity.Normalize();
-                        velocity *= 15f;
-                        Projectile.velocity = velocity;
+                        distance = Vector2.Distance(Main.npc[i].Center, Projectile.Center);
+                        closest = i;
                     }
                 }
+                if (closest >= 0)
+                {
+                    Vector2 velocity = Main.npc[closest].Center - Projectile.Center;
+                    velocity.Normalize();
+                    velocity *= 15f;
+                    Projectile.velocity = velocity;
+                }
             }
-            else if (targetNPC >= 0)
+            else if (targetNPC >= 0 && Main.npc[targetNPC].active)
             {
                 Vector2 velocity2 = Main.npc[targetNPC].Center - Projectile.Center;
                 velocity2.Normalize();

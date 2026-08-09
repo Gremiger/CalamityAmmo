@@ -26,7 +26,6 @@ namespace CalamityAmmo.Global
 	public class CAEGlobalItem : GlobalItem
 	{
 		public static bool canArcaneTransform;
-		public static int manaCost;
 		public override bool CanAccessoryBeEquippedWith(Item equippedItem, Item incomingItem, Player player)
 		{
 			if(ItemGroups.coils.Contains(equippedItem.type)&& ItemGroups.coils.Contains(incomingItem.type))
@@ -92,10 +91,6 @@ namespace CalamityAmmo.Global
 			CalamityPlayer calamityPlayer = player.Calamity();
 			if (calamityPlayer.gloveOfRecklessness && item.DamageType == DamageClass.Ranged)
 			{
-				return 1.15f;
-			}
-			if (calamityPlayer.gloveOfRecklessness && item.DamageType == DamageClass.Ranged)
-			{
 				return 0.85f;
 			}
 			if (modplayer.Holster && item.useAmmo == AmmoID.Bullet)
@@ -117,9 +112,9 @@ namespace CalamityAmmo.Global
 		public override void PickAmmo(Item weapon, Item ammo, Player player, ref int type, ref float speed, ref StatModifier damage, ref float knockback)
 		{
 			CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
-			manaCost = (int)(weapon.useTime / 3f* player.manaCost);
-			if (weapon.useAmmo == AmmoID.Arrow&&modplayer.Arcane&&player.statMana>=manaCost) {
-				player.CheckMana(manaCost, true);
+			modplayer.arrowManaCost = (int)(weapon.useTime / 3f* player.manaCost);
+			if (weapon.useAmmo == AmmoID.Arrow&&modplayer.Arcane&&player.statMana>=modplayer.arrowManaCost) {
+				player.CheckMana(modplayer.arrowManaCost, true);
 				if (player.ItemAnimationActive)player.manaRegenDelay = weapon.useTime * 2 + 1;
 			}
 		}
