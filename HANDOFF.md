@@ -1,4 +1,15 @@
-# Handoff: Calamity 2.2.2 compatibility fix
+# Handoff: Calamity 2.2.2 compatibility fix + perf/correctness sweep
+
+## Branches (test in this order)
+
+1. **`Levantine`** — just the Calamity 2.2.2 crash fix (commit `b636bce`).
+   Test this first since it's what actually unblocks your save.
+2. **`perf-and-correctness-fixes`** — branched off `Levantine`, adds a
+   separate commit (`659ab7e`) fixing 6 correctness bugs and 4 performance
+   issues found by a code-review sweep (see its own section below). Kept
+   separate on purpose so a problem in the perf/correctness pass can't
+   block the crash fix — test it independently after `Levantine` is
+   confirmed working, then merge if it's good.
 
 ## Context
 
@@ -108,3 +119,41 @@ but the compiler is the real ground truth. If Build+Reload surfaces more
 missing-type/member errors, they'll point at the exact file/line — bring
 those back and we'll fix them the same way (find what Calamity renamed/moved
 it to in the current source, adjust the addon to match).
+
+## Second branch: `perf-and-correctness-fixes`
+
+Once `Levantine` is confirmed working (mod loads, save is playable), check
+out this branch to test the second round of fixes:
+```
+git checkout perf-and-correctness-fixes
+git reset --hard origin/perf-and-correctness-fixes
+```
+Build + Reload again and play a bit, focusing on the things this branch
+changed gameplay-wise:
+
+- **Napalm Bullet** — bonus ignite (extra fire damage) should now only
+  proc on a target that was *already* oiled from a previous hit, not on
+  every single hit.
+- **Mushroom United Nations' Shroomere shot** — should now home toward the
+  *nearest* enemy in range (and respect line-of-sight/walls), not the
+  farthest.
+- **Glove of Recklessness + a ranged weapon** — use speed should be
+  *faster* (was a dead branch making it always slower with no upside
+  before this fix).
+- **Transformer Coil** (electric coil chain lightning) and **Arcane
+  Quiver / arrow mana cost** — these had shared-state bugs that mostly
+  bite in multiplayer; single-player behavior should look unchanged if
+  it looked fine before.
+- **Lightning Vortex** (post-Moon Lord projectile) — should target the
+  *nearest* enemy on its initial acquire, not whichever one happened to
+  be last in the internal list.
+- General performance: harder to observe directly, but the fixes target
+  real per-tick hot paths (`autoSelectNPC`, `SporeSac`, the electric coil
+  chain's `ElectricStream` projectile) that could cause frame-time spikes,
+  especially with multiple stacked accessory effects or in multiplayer.
+
+This was also code-only, not build-tested — same caveat as above applies.
+If Build+Reload turns up errors here, bring them back too.
+
+Once both branches check out, merge `perf-and-correctness-fixes` into
+`Levantine` (or open a PR from one to the other in your fork) and push.
