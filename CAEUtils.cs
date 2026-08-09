@@ -27,6 +27,15 @@ namespace CalamityAmmo
 			}
 			return closestNpc == null ? -1 : closestNpc.whoAmI;
 		}
+		public static bool HasAccessoryEquipped(Player player, int itemType)
+		{
+			for (int i = 3; i <= 12; i++)
+			{
+				if (player.armor[i].type == itemType)
+					return true;
+			}
+			return false;
+		}
 		public static Color ColorSwap(Color firstColor, Color secondColor, float seconds)
 		{
 			float colorMePurple = (float)((Math.Sin((double)(Math.PI * 2 / seconds) * Main.GlobalTimeWrappedHourly) + 1.0) * 0.5);

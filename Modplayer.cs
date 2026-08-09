@@ -4,6 +4,7 @@ using CalamityMod;
 using CalamityMod.Buffs.Alcohol;
 using CalamityMod.Buffs.StatBuffs;
 using CalamityMod.Buffs.StatDebuffs;
+using CalamityMod.Items.Accessories;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -185,7 +186,7 @@ namespace CalamityAmmo
 				Player.GetDamage<RangedDamageClass>() -= 0.10f;
 				//Player.GetCritChance<RangedDamageClass>() -= 10f;
 			}
-			if (Player.Calamity().gloveOfPrecision)
+			if (CAEUtils.HasAccessoryEquipped(Player, ModContent.ItemType<GloveOfPrecision>()))
 			{
 				//Player.GetAttackSpeed<RangedDamageClass>() -= 0.15f;
 				Player.GetDamage<RangedDamageClass>() += 0.10f;
