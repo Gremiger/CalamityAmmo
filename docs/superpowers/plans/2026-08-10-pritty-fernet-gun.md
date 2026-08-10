@@ -614,6 +614,6 @@ Expected: one match in each file, confirming both tiers use the same splash-dama
 
 - [ ] **Step 5: Final full-branch diff review**
 
-Run: `git log --oneline -9` (should show the 8 feature commits from Tasks 1–7 plus this task if it produces one) and `git diff perf-and-correctness-fixes~1..HEAD --stat` to see the full set of files this feature touched, confirming nothing outside `Weapons/`, `Ammos/`, `Projectiles/`, and `docs/` was modified.
+Run: `git log --oneline -9` (should show the 8 feature commits from Tasks 1–7 plus this task if it produces one) and `git diff $(git merge-base Levantine HEAD)..HEAD --stat` to see the full set of files this feature touched (diffing from the actual fork point off `Levantine`, not `perf-and-correctness-fixes~1` — since we're on that branch, its ref moves with every commit, so `~1` would only show the last commit). Confirm nothing outside `Weapons/`, `Ammos/`, `Projectiles/`, and `docs/` was modified.
 
 No commit needed for this task unless Step 1–4 turn up a fix — in that case, fix inline, re-run the relevant check, then commit the fix with a message describing what was inconsistent.
