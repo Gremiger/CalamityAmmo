@@ -155,5 +155,39 @@ changed gameplay-wise:
 This was also code-only, not build-tested — same caveat as above applies.
 If Build+Reload turns up errors here, bring them back too.
 
-Once both branches check out, merge `perf-and-correctness-fixes` into
+### New content on this same branch: Pritty Blaster + Pritty/Fernet Rounds
+
+Also on `perf-and-correctness-fixes` (committed directly onto it, not a
+separate branch — see `docs/superpowers/specs/2026-08-09-pritty-fernet-gun-design.md`
+and `docs/superpowers/plans/2026-08-10-pritty-fernet-gun.md` for the full
+design/plan): a new whimsical Argentina-themed weapon line.
+
+- **Pritty Blaster** (`Weapons/PrittyBlaster.cs`) — a Pre-Hardmode gun,
+  craftable day one (3 Bottle + 10 Wood at a Work Bench). Fires any
+  Bullet-type ammo.
+- **Pritty Rounds** (`Ammos/Pre_Hardmode/PrittyRounds.cs`) — the starter
+  ammo tier (damage 7), themed on *vino con Pritty*.
+- **Fernet Rounds** (`Ammos/Hardmode/FernetRounds.cs`) — the Hardmode
+  upgrade (damage 13), themed on *Fernet con Coca*.
+- Both ammo tiers shatter into a small AoE "fizzy splash"
+  (`Projectiles/FizzySplash.cs`) on hit, dealing 40% of the hit's damage to
+  anything nearby — check that this actually procs and looks reasonable in
+  combat (a burst of green dust for Pritty Rounds, amber/orange for Fernet
+  Rounds).
+- Sprites are script-generated pixel art (not hand-drawn, not borrowed from
+  elsewhere) — take a look at how `Weapons/PrittyBlaster.png`,
+  `Ammos/Pre_Hardmode/PrittyRounds.png`, and `Ammos/Hardmode/FernetRounds.png`
+  actually render in-game; they were only visually checked as static PNGs on
+  this Mac, never seen rendered by the actual game engine/UI scaling.
+- Confirm Pritty Blaster actually fires Pritty Rounds/Fernet Rounds
+  correctly when loaded (it intentionally has no `Shoot()` override, unlike
+  this addon's other guns, so it should respect whatever ammo is in your
+  ammo slot — worth double-checking this works as expected since it departs
+  from this codebase's usual gun pattern).
+- None of this new code references anything under the `CalamityMod`
+  namespace (only vanilla Terraria/tModLoader APIs), so it shouldn't be
+  exposed to any Calamity-2.2.2-style breakage — but same caveat as
+  everything else here: code-only, never compiled.
+
+Once everything checks out, merge `perf-and-correctness-fixes` into
 `Levantine` (or open a PR from one to the other in your fork) and push.
